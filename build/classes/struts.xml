@@ -6,20 +6,12 @@
 <struts>
 <package name="www" extends="struts-default">
         <action name="slogin" class="www.action.SloginAction">
-            <result name="success">/begin.jsp</result>
-            <result name="error">/begin.jsp</result>
+            <result name="success">/student.jsp</result>
+            <result name="error">/serror.jsp</result>
         </action>
         <action name="tlogin" class="www.action.TloginAction">
-            <result name="success">/begin.jsp</result>
-            <result name="error">/begin.jsp</result>
-        </action>
-        <action name="sapply" class="www.action.SapplyAction">
-            <result name="success">/begin.jsp</result>
-            <result name="error">/begin.jsp</result>
-        </action>
-        <action name="tapply" class="www.action.TapplyAction">
-            <result name="success">/begin.jsp</result>
-            <result name="error">/begin.jsp</result>
-        </action>
-    </package>
+            <result name="success">/teacher.jsp</result>
+            <result name="error">/terror.jsp</result>
+         </action>
+</package>
 </struts>
