@@ -13,5 +13,53 @@
             <result name="success">/teacher.jsp</result>
             <result name="error">/terror.jsp</result>
          </action>
+         <action name="sapply" class="www.action.SapplyAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+        <action name="tapply" class="www.action.TapplyAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+         <action name="sinfor" class="www.action.SinforAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+        <action name="tinfor" class="www.action.TinforAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+         <action name="stui" class="www.action.StuiAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+        <action name="ttui" class="www.action.TtuiAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+         <action name="schoose" class="www.action.SchooseAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+        <action name="tchoose" class="www.action.TchooseAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+         <action name="syi" class="www.action.SyiAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+        <action name="tyi" class="www.action.TyiAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+         <action name="syao" class="www.action.SyaoAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
+        <action name="tyao" class="www.action.TaoAction">
+            <result name="success">/begin.jsp</result>
+            <result name="error">/begin.jsp</result>
+        </action>
 </package>
 </struts>

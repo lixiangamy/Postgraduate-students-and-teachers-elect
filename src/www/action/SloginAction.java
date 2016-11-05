@@ -1,8 +1,13 @@
 package www.action;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 public class SloginAction {
 	private String snumber;
 	private String semail;
+	private String sname;
+	Connection connect = DB_connect.connect();
     public String getSnumber() {
         return snumber;
     }
@@ -16,11 +21,18 @@ public class SloginAction {
         this.semail = semail;
     }
     public String execute() throws Exception {
-    	if(semail.equals("lixiang"))
-    	{
-    		return "success";
-    	}
-    	return "success";
+	  	Statement stmt;
+	  	String sql = "select * from student where e='" + semail + "'";
+	  	stmt = (Statement)connect.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		while(rs.next()){
+			if(snumber.equals(rs.getString("number"))){
+				sname=new String(rs.getString("n"));
+				connect.close();
+				return "success";
+			}
+		}
+		connect.close();
+		return "error";
     }
-
 }

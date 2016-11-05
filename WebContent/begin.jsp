@@ -9,23 +9,15 @@
  
  <body>
   <center>
-  <d>
-  <t>
         <a href="studentlogin.jsp"><button>学生登录</button></a>
-  </t>
-  <t>
+
         <a href="teacherlogin.jsp"><button>教师登录</button></a>
-  </t>
-  </d>
+         <br>
+         </br>
   <br>
-  <br>
-  </br>
-  <t>
+  
         <a href="studentapply.jsp"><button>学生注册</button></a>
-  </t>
-  <t>
-        <a href="teacherapply.jsp"><button>教师注册</button></a>
-  </t>
+		 <a href="teacherapply.jsp"><button>教师注册</button></a>
   </br>
   </center>
  </body>

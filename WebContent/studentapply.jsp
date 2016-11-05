@@ -6,24 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>学生注册</title>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
-</script>
-<script type="text/javascript">
-function checkLast(str){  
-    var flag=false;  
-    var ext=str.split('.')[str.split('.').length-1];  
-    if(ext=='jpg'){  
-        flag=true;  
-    }  
-    return flag;  
-}  
-function checkPerm(obj){  
-    if(!checkLast(obj.value.toLowerCase())){  
-        alert("上传文件格式错误！");  
-        document.getElementByIdx_x("permitSpan").innerHTML='<s:file name="permitFile" size="14" id="permitCheck" onchange="checkPerm(this);"></s:file>';  
-    }  
-}  
-</script>
 </head>
 <body>
 <center>
@@ -49,7 +31,15 @@ function checkPerm(obj){
 				<s:else>
 				<s:radio name="sgboa" list="%{#{'1':'否','0':'是'}}" ></s:radio> 
 				</s:else>
-				<span id="permitSpan"><s:file name="photofile" label="照片（jpg/png）"  size="40" onchange="checkPerm(this);">  
+				<span id="permitSpan"><s:file name="photofile" label="照片（jpg/png<65k）"  size="40" >  
+				</s:file></span>
+				<span id="pS"><s:file name="provefile" label="学号姓名匹配证明（jpg/png<65k）"  size="40">
+                </s:file></span>
+                <span id="pS1"><s:file name="ponefile" label="奖项/项目一（jpg/png<65k）"  size="40">
+                </s:file></span>
+                <span id="pS2"><s:file name="ptwofile" label="奖项/项目二（jpg/png<65k）"  size="40">
+                </s:file></span>
+                <span id="pS3"><s:file name="ptherefile" label="奖项/项目三（jpg/png<65k）"  size="40">
                 </s:file></span>
                 <s:password name="snumbera" label="设置密码"></s:password>
                 <s:submit value="注册"/>
