@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>学生信息管理</title>
+<title>已申请导师</title>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script type="text/javascript">
+function re(e)
+{
+	var BT = document.getElementById("dx");
+	window.location.href = "checkdx?dx="+e.innerHTML;
+}
+</script>
 </head>
-<body>	
+<body>
 <center>
 <tr>
 <td>
@@ -26,6 +35,22 @@
 <a href="syi?semail=${semail}">已申请导师</a> 
         
 <a href="syao?semail=${semail}">导师邀请</a> 
+<br>
+</br>
+		<table width="45%" border="1" bordercolor="#7b68ee" >
+			<s:iterator value="BL" id="a" status = "s">
+			<s:iterator value="IL" id="b" status = "N">
+			<tr>
+			<td bgcolor="#e0ffff">
+				<p onclick="re(this);"><s:property value="a"/> </p> 
+			</td>
+			<td bgcolor="#e0ffff">
+				<s:property value="b"/>
+			</td>
+			</tr>
+			</s:iterator>
+			</s:iterator>
+		</table>
 </center>
 </body>
 </html>

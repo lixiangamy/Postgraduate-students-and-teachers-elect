@@ -6,10 +6,13 @@ import java.sql.Statement;
 public class SloginAction {
 	private String snumber;
 	private String semail;
-	private String sname;
+	private String sna;
 	Connection connect = DB_connect.connect();
     public String getSnumber() {
         return snumber;
+    }
+    public String getSna() {
+        return sna;
     }
     public String getSemail() {
         return semail;
@@ -27,7 +30,7 @@ public class SloginAction {
 		ResultSet rs = stmt.executeQuery(sql);
 		while(rs.next()){
 			if(snumber.equals(rs.getString("number"))){
-				sname=new String(rs.getString("n"));
+				sna=new String(rs.getString("n"));
 				connect.close();
 				return "success";
 			}
