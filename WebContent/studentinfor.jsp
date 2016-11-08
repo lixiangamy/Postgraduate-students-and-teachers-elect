@@ -41,30 +41,31 @@ scope="session"/>
        uname = new String(semail.getBytes(),"ISO-8859-1");//将编码转为ISO-8859-1  
        //从数据库中搜索出用户的资料  
        String sql = "select e,n,a,s,sh,xuehao,school,m,p,b,c,d,number from student "+"where e='"+semail+"'";  
-       Vector<String[]> vuser = DB_connect.getInfoArr(sql);  
+       Vector<String[]> vuser = DB_connect.getInfoArr(sql);
        String[] str = vuser.get(0); %>  
 	<tr>
-	<td>name:</td>
-	<td>age:<input type="a" name="age" value="<%=str[1] %>"/></td>
-	<td>sex:<s:property value = "s"/></td>
+	<td>name:<input type="a" name="name" value="<%=str[1] %>"/></td>
+	<td>age:<input name="age" value="<%=str[2] %>"/></td>
+	<td>sex:<input name="sex" value="<%=str[3] %>"/></td>
 	<td rowspan="2">照片</td>
 	</tr>
 	<tr>
 	<td>email:<%=str[0] %></td>
-	<td>shenfenzheng:<s:property value = "sh"/></td>
-	<td>studentnumber:<s:property value = "xuehao"/></td>
+	<td>shenfenzheng:<input name="sh" value="<%=str[4] %>"/></td>
+	<td>studentnumber:<input name="xuehao" value="<%=str[5] %>"/></td>
 	</tr>
 	<tr>
-	<td>school:<s:property value = "school"/></td>
-	<td>benkezhuanye:<s:property value = "m"/></td>
-	<td>lanking:<s:property value = "p"/></td>
-	<td>IfWantToBeMaster:<s:property value = "b"/></td>
+	<td>school:<input name="school" value="<%=str[6] %>"/></td>
+	<td>benkezhuanye:<input name="m" value="<%=str[7] %>"/></td>
+	<td>lanking:<input name="p" value="<%=str[8] %>"/></td>
+	<td>IfWantToBeMaster:<input name="b" value="<%=str[9] %>"/></td>
 	</tr>
 	<tr>
-	<td colspan="2">chengguo:<s:property value = "c"/></td>
-	<td>HaveTeacher:<s:property value = "d"/></td>
-	<td>mima:<s:property value = "number"/></td>
+	<td colspan="2">chengguo:<input name="c" value="<%=str[10] %>"/></td>
+	<td>HaveTeacher:<input name="d" value="<%=str[11] %>"/></td>
+	<td>mima:<input name="number" value="<%=str[12] %>"/></td>
 	</tr>
+	</form>
 	</table>
 <input type="button" value="
 修改" onclick= "check()"/>  
