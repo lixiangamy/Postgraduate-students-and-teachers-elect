@@ -1,5 +1,7 @@
 package www.action;
 //—ß…˙…Í«Î
 public class TyaoAction {
-
+	public String execute() throws Exception {
+		return "success";
+    }
 }

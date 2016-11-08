@@ -38,14 +38,21 @@
             <result name="error">/begin.jsp</result>
         </action>
          <action name="schoose" class="www.action.SchooseAction">
-            <result name="success">/begin.jsp</result>
+            <result name="success">/xuandaoshi.jsp</result>
             <result name="error">/begin.jsp</result>
         </action>
         <action name="tchoose" class="www.action.TchooseAction">
             <result name="success">/begin.jsp</result>
             <result name="error">/begin.jsp</result>
         </action>
+        <action name="select" class="www.action.SelectAction">
+            <result name="success">/xuandaoshi.jsp</result>
+        </action>
          <action name="syi" class="www.action.SyiAction">
+            <result name="success">/yxds.jsp</result>
+            <result name="error">/serror.jsp</result>
+        </action>
+        <action name="checkdx" class="www.action.CheckdcAction">
             <result name="success">/begin.jsp</result>
             <result name="error">/begin.jsp</result>
         </action>
@@ -54,10 +61,10 @@
             <result name="error">/begin.jsp</result>
         </action>
          <action name="syao" class="www.action.SyaoAction">
-            <result name="success">/begin.jsp</result>
+            <result name="success">/YYQXDS.jsp</result>
             <result name="error">/begin.jsp</result>
         </action>
-        <action name="tyao" class="www.action.TaoAction">
+        <action name="tyao" class="www.action.TyaoAction">
             <result name="success">/begin.jsp</result>
             <result name="error">/begin.jsp</result>
         </action>
