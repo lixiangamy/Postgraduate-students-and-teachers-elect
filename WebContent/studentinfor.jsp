@@ -25,7 +25,7 @@
 	</tr>
 	<tr>
 	<td>email:<s:textfield name="semail" value="%{semail}"></s:textfield></td>
-	<td>shenfenzheng:<s:textfield name="ssh" value="%{ssh}"></s:textfield></td>
+	<td></td>
 	<td>studentnumber:<s:textfield name="sxuehao" value="%{sxuehao}"></s:textfield></td>
 	</tr>
 	<tr>
