@@ -1,13 +1,6 @@
 package www.action;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-
-//学生信息
-public class SinforAction {
-	Statement stmt;
+public class XiugAction {
 	private String sname;//姓名
 	private int sage;//年龄
 	private String semail;//email
@@ -16,7 +9,7 @@ public class SinforAction {
 	private String sxuehao;//学号
 	private String sschool;//本科院校
 	private String sm;//本科专业
-	private int sp;//排名
+	private String sp;//排名
 	private String sc;//成果
 	private int sb;//是否读博
 	private String snumber;//密码
@@ -47,7 +40,7 @@ public class SinforAction {
     public String getSm(){
 		return sm;
 	}
-    public int getSp(){
+    public String getSp(){
 		return sp;
 	}
     public String getSc(){
@@ -86,7 +79,7 @@ public class SinforAction {
     public void setSm(String sm) {
         this.sm = sm;
     }
-    public void setSp(int sp) {
+    public void setSp(String sp) {
         this.sp = sp;
     }
     public void setSc(String sc) {
@@ -102,43 +95,7 @@ public class SinforAction {
         this.sd = sd;
     }
     public String execute() throws Exception {
-    	Connection ct = DB_connect.connect();
-    	try
-    	{ 
-    		String sql = "select * from student";
-			stmt = (Statement)ct.createStatement();
-			ResultSet res = stmt.executeQuery(sql);
-			String sql1 = "select * from student where e = '" + semail + "'";
-			res = stmt.executeQuery(sql1);
-			if(!res.next())
-			{
-				return "error";
-			}
-			else
-			{
-				sname = new String(res.getString("n"));
-				sage = res.getInt("a");
-				semail = new String(res.getString("e"));
-				ssex = res.getInt("s");
-				ssh = new String(res.getString("sh"));
-				sxuehao = new String(res.getString("xuehao"));
-				sschool = new String(res.getString("school"));
-				sm = new String(res.getString("m"));
-				sp = res.getInt("p");
-				sc = new String(res.getString("c"));
-				sb = res.getInt("b");
-				snumber = new String(res.getString("number"));
-				sd = res.getInt("d");
-				ct.close();
-				return "success";
-			}
-			
-		}
-    	catch(Exception e)
-    	{
-			return "error";
-		}
+    	System.out.print(sd+"***");
+    	return "success";
     }
-    
-    
 }

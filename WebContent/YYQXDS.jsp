@@ -42,7 +42,7 @@ function re(e)
 		已经选择完的：
 		</td>
 		</tr>
-		<table width="45%" border="1" bordercolor="#7b68ee" >
+		<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
 			<s:iterator value="DL" id="a" status = "s">
 			<s:iterator value="DIL" id="b" status = "N">
 			<tr>
@@ -61,7 +61,7 @@ function re(e)
 		未选择状态的：
 		</td>
 		</tr>
-		<table border="1">
+		<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
 			<s:iterator value="DLL" id="C" status = "M">
 			<tr>
 			<td>

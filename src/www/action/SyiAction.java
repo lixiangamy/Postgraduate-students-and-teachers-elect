@@ -1,14 +1,9 @@
 package www.action;
-<<<<<<< HEAD
-//ÒÑÉêÇëµ¼Ê¦
-public class SyiAction {
-=======
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
->>>>>>> f351124893b3a8b586c3597a5b88dadca092db29
 
 public class SyiAction {
 	public String semail=null;

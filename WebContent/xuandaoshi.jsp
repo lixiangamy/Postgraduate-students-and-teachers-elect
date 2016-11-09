@@ -56,7 +56,7 @@ function re(e)
 --------------------------------------------------------------------------
 <br>
 </br>
-		<table border="1" width="30%">
+		<table border="1" width="450" cellspacing="0" cellpadding="2" >
 			<s:iterator value="BL" id="a" status = "s">
 			<tr>
 			<td>

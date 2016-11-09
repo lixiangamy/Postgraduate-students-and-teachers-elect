@@ -1,9 +1,10 @@
 package www.action;
-//Ñ¡Ôñµ¼Ê¦
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 public class SchooseAction {
 	public String semail=null;
 	public String sna=null;

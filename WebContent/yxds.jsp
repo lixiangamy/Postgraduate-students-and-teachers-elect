@@ -37,7 +37,7 @@ function re(e)
 <a href="syao?semail=${semail}">µ¼Ê¦ÑûÇë</a> 
 <br>
 </br>
-		<table width="45%" border="1" bordercolor="#7b68ee" >
+		<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
 			<s:iterator value="BL" id="a" status = "s">
 			<s:iterator value="IL" id="b" status = "N">
 			<tr>

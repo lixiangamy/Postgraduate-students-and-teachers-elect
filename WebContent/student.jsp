@@ -1,29 +1,31 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="GB2312"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<title>学生信息管理</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ѧ����Ϣ����</title>
 </head>
 <body>	
 <center>
 <tr>
 <td>
-您好，
+���ã�
 <s:property value="sna"/>
-同学！
+ͬѧ��
 </td>
 </tr>
 <br>
 </br>
-<a href="sinfor?semail=${semail}">个人信息</a> 
+<a href="sinfor?semail=${semail}">������Ϣ</a> 
         
-<a href="stui?semail=${semail}">系统推荐</a> 
+<a href="stui?semail=${semail}">ϵͳ�Ƽ�</a> 
         
-<a href="schoose?semail=${semail}">选择导师</a> 
+<a href="schoose?semail=${semail}">ѡ��ʦ</a> 
         
-<a href="syi?semail=${semail}">已申请导师</a> 
+<a href="syi?semail=${semail}">�����뵼ʦ</a> 
         
-<a href="syao?semail=${semail}">导师邀请</a> 
+<a href="syao?semail=${semail}">��ʦ����</a> 
 </center>
 </body>
 </html>

@@ -1,5 +1,5 @@
 package www.action;
-//ÒÑÑûÇëÑ§Éú
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
