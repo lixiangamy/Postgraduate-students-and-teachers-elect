@@ -30,8 +30,7 @@
             <result name="error">/begin.jsp</result>
         </action>
          <action name="stui" class="www.action.StuiAction">
-            <result name="success">/begin.jsp</result>
-            <result name="error">/begin.jsp</result>
+            <result name="success">/studenttui.jsp</result>
         </action>
         <action name="ttui" class="www.action.TtuiAction">
             <result name="success">/begin.jsp</result>
@@ -52,8 +51,8 @@
             <result name="error">/serror.jsp</result>
         </action>
         <action name="checkdx" class="www.action.CheckdcAction">
-            <result name="success">/begin.jsp</result>
-            <result name="error">/begin.jsp</result>
+            <result name="success">/teachershow.jsp</result>
+            <result name="error">/serror.jsp</result>
         </action>
         <action name="tyi" class="www.action.TyiAction">
             <result name="success">/begin.jsp</result>
@@ -64,7 +63,7 @@
             <result name="error">/begin.jsp</result>
         </action>
         <action name="tyao" class="www.action.TyaoAction">
-            <result name="success">/begin.jsp</result>
+            <result name="success">/YYQDDX.jsp</result>
             <result name="error">/begin.jsp</result>
         </action>
         <action name="back" class="www.action.XiugAction">
