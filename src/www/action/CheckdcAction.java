@@ -27,6 +27,8 @@ public class CheckdcAction {
  	private blob tpthree;
   	//照片
   	
+ 	
+ 	
      public String getdx(){
   		return dx;
   	}
@@ -128,13 +130,20 @@ public class CheckdcAction {
     		{
     			dx = new String(res.getString("tn"));
     			tage = res.getInt("ta");
-    			temail = new String(res.getString("te"));
     			tsex = res.getInt("ts");
   				tjzgh = new String(res.getString("jzgh"));
  				induction = new String(res.getString("induction"));
  				tc = new String(res.getString("tc"));
  				tsuccess = res.getInt("tsuccess"); 
  				tx = res.getInt("tx");
+ 				if(tx==1)//如果允许显示
+ 				{
+ 					temail = new String(res.getString("te"));
+ 				}
+ 				else
+ 				{
+ 					temail = "--@--";
+ 				}
  				tschool = new String(res.getString("tschool"));
  				tm = new String(res.getString("tm"));
  				tb = res.getInt("tb");

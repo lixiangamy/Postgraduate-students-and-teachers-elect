@@ -21,7 +21,7 @@ function re(e)
 <td>
 您好，
 <s:property value="tna"/>
-同学！
+导师！
 </td>
 </tr>
 <br>

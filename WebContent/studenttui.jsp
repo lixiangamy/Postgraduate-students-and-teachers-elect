@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>已邀请学生的导师</title>
+<title>学生信息管理</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
 </script>
 <script type="text/javascript">
@@ -15,12 +15,12 @@ function re(e)
 }
 </script>
 </head>
-<body>
+<body>	
 <center>
 <tr>
 <td>
 您好，
-<s:property value="tna"/>
+<s:property value="sname"/>
 同学！
 </td>
 </tr>
@@ -37,40 +37,14 @@ function re(e)
 <a href="syao?semail=${semail}">导师邀请</a> 
 <br>
 </br>
-		<tr>
-		<td>
-		已经选择完的：
-		</td>
-		</tr>
-		<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
-			<s:iterator value="DL" id="a" status = "s">
-			<s:iterator value="DIL" id="b" status = "N">
+--------------------------------------------------------------------------
+<br>
+</br>
+		<table border="1" width="30%">
+			<s:iterator value="BL" id="a" status = "s">
 			<tr>
 			<td>
 				<p onclick="re(this);"><s:property value="a"/> </p> 
-			</td>
-			<td>
-				<s:property value="b"/>
-			</td>
-			</tr>
-			</s:iterator>
-			</s:iterator>
-		</table>
-		<tr>
-		<td>
-		未选择状态的：
-		</td>
-		</tr>
-		<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
-			<s:iterator value="DLL" id="C" status = "M">
-			<tr>
-			<td>
-				<p onclick="re(this);"><s:property value="C"/> </p> 
-			</td>
-			<td>
-				<a href="cs?state=1"><button>同意</button></a>
-				<a href="cs?state=2"><button>不同意</button></a>
-				<a href="cs?state=3"><button>待定</button></a>
 			</td>
 			</tr>
 			</s:iterator>
