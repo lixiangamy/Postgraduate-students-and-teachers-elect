@@ -13,7 +13,7 @@
 <center>
 -------------------------------------------------------------------------------------
 <h1>学生信息</h1>
-<s:form action="back" theme="simple"> 
+<s:form action="back" theme="simple" enctype="multipart/form-data"> 
 <table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900"> 
 	
 	<tr>
@@ -25,7 +25,7 @@
 	</tr>
 	<tr>
 	<td>email:<s:textfield name="semail" value="%{semail}"></s:textfield></td>
-	<td></td>
+	<td>shenfenzheng:<s:textfield name="ssh" value="%{ssh}"></s:textfield></td>
 	<td>studentnumber:<s:textfield name="sxuehao" value="%{sxuehao}"></s:textfield></td>
 	</tr>
 	<tr>
@@ -44,6 +44,8 @@
 	<s:submit value="修改"/>
 	</td>
 	</s:form>
+	
+<a href="javascript:history.back()">返回</a>
 </center>	
 </body>
 </html>

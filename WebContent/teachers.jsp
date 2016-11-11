@@ -1,32 +1,17 @@
-<%@ page contentType="textml; charset=UTF-8" %>
- <%@ page import="www.action.SinforAction,www.action.DB_connect" %>
-  <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-  <%@ taglib prefix="s" uri="/struts-tags" %>
-  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-  <html>
-  
-  <head>
- <meta http-equiv="Content-Type" content="textml; charset=UTF-8">
-  <title>学生信息</title>
-  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
-  </script>
- <script language="javascript" src="script/trim.js">
- </script><!--导入脚本-->  
- <script language="javascript">  
- function sq(){  
-      
-  }
-  </script>
-  </head>
-  <body>
- <jsp:useBean id="e" class="www.action.TinforAction" scope="session"/> 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ </head>
   <body bgcolor="Bisque">
-  <h1>学生信息</h1>
+  <h1>导师信息</h1>
   	<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
- 	<form action="tback" name="teacherform" method="post">   
   	<tr>
- 	<td>name:<s:property value="tn"/></td>
- 	<td>age:<s:property value='ta'/></td>
+ 	<td>name:<s:property value="dx"/></td>
+ 	<td> age:<s:property value="ta"/> </td>
  	<td>sex:<s:property value="ts"/></td>
   	<td rowspan="2">照片</td>
   	</tr>
@@ -50,7 +35,6 @@
  	<tr>
  	<input type="button" value="申请该导师" onclick="sq()"/>
  	</tr>
- 	</form>
   	</table>
  <a href="javascript:history.back()">返回</a>
   </body>

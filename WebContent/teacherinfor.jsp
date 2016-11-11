@@ -17,14 +17,14 @@
 	<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
 	<form action="tback" name="teacherform" method="post">   
 	<tr>
-	<td>name:<input type="text" name="name" value="<s:property value="tn"/>"></td>
-	<td>age:<input name="a" value="<s:property value='ta'/>"></td>
-	<td>sex:<input name="sex" value="<s:property value="ts"/>"></td>
+	<td>name:<input type="text" name="tn" value="<s:property value="tn"/>"></td>
+	<td>age:<input name="ta" value="<s:property value='ta'/>"></td>
+	<td>sex:<input name="ts" value="<s:property value="ts"/>"></td>
 	<td rowspan="2">照片</td>
 	</tr>
 	<tr>
-	<td>email:<input name="e" value="<s:property value="te"/>"></td>
-	<td>shenfenzheng:<input name="sh" value="<s:property value="tsh"/>"></td>
+	<td>email:<input name="te" value="<s:property value="te"/>"></td>
+	<td>SrudentSchool:<input name="tsshool" value="<s:property value="tsshool"/>"></td>
 	<td>teachernumber:<input name="jzgh" value="<s:property value="jzgh"/>"></td>
 	</tr>
 	<tr>

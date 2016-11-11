@@ -19,12 +19,11 @@
 				<s:else>
 				<s:radio name="sgsexa" list="%{#{'1':'男','0':'女'}}" ></s:radio> 
 				</s:else>
-				<s:password name="smannuma" label="身份证号"></s:password>
                 <s:textfield name="snuma" label="学号"></s:textfield>
                 <s:textfield name="schoola" label="本科学校" value="请填全称"></s:textfield>
                 <s:textfield name="smaina" label="本科专业"></s:textfield>
                 <s:textfield name="srankinga" label="专业排名"></s:textfield>
-                <s:textfield name="srankinga" label="成果" value="获得过的奖项、做过的大项目" cssStyle="width:200px;height:100px"></s:textfield>
+                <s:textfield name="schena" label="成果" value="获得过的奖项、做过的大项目" cssStyle="width:200px;height:100px"></s:textfield>
 				<s:if test="sboa==null">
 				<s:radio name="sboa" label="是否读博" list="%{#{'1':'否','0':'是'}}" value="1"></s:radio> 
 				</s:if>

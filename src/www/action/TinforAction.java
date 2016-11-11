@@ -1,13 +1,17 @@
 package www.action;
 //导师信息
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class TinforAction {
 	Statement stmt;
-	private String tname;//姓名
-	private int tage;//年龄
-	private String temail;//email
-	private int tsex;//性别
-  	private String tjzgh;//教职工号	
+	private String tn;//姓名
+	private int ta;//年龄
+	private String te;//email
+	private int ts;//性别
+  	private String jzgh;//教职工号	
  	private String induction;//研究方向
  	private String tc;//研究成果
  	private int tsuccess;//已经成功的学生个数
@@ -16,26 +20,24 @@ public class TinforAction {
  	private String tm;//要求学生的专业
  	private int tb;//是否要求学生读博
  	private int tp;//对学生排名的要求
- 	private String tsschool;//对学生学校的要求
- 	private blob tpone;
- 	private blob tptwo;
- 	private blob tpthree;
+ 	private String tsshool;//对学生学校的要求
+
   	//照片
   	
-     public String getTname(){
-  		return tname;
+     public String getTn(){
+  		return tn;
   	}
-     public int getTage(){
-  		return tage;
+     public int getTa(){
+  		return ta;
   	}
-     public String getTemail() {
-          return temail;
+     public String getTe() {
+          return te;
       }
-     public int getTsex(){
-  		return tsex;
+     public int getTs(){
+  		return ts;
   	}
-     public String getTjzgh(){
-  		return tjzgh;
+     public String getJzgh(){
+  		return jzgh;
   	}
      public String getInduction(){
  		return induction;
@@ -61,23 +63,23 @@ public class TinforAction {
      public int getTp(){
  		return tp;
  	}
-     public String getTsschool(){
-  		return tsschool;
+     public String getTsshool(){
+  		return tsshool;
   	}
-      public void setTname(String tname) {
-          this.tname = tname;
+      public void setTn(String tn) {
+          this.tn = tn;
       }
-      public void setTage(int tage) {
-          this.tage = tage;
+      public void setTa(int ta) {
+          this.ta = ta;
       }
-      public void setTemail(String temail) {
-          this.temail = temail;
+      public void setTe(String te) {
+          this.te = te;
       }
-      public void setTsex(int tsex) {
-          this.tsex = tsex;
+      public void setTs(int ts) {
+          this.ts = ts;
       }
-       public void setTjzgh(String tjzgh) {
-           this.tjzgh = tjzgh;
+       public void setJzgh(String jzgh) {
+           this.jzgh = jzgh;
        }
      public void setInduction(String induction) {
          this.induction = induction;
@@ -103,17 +105,17 @@ public class TinforAction {
      public void setTp(int tp) {
          this.tp = tp;
      }
-     public void setTsschool(String tsschool) {
-         this.tm = tsschool;
+     public void setTsshool(String tsshool) {
+         this.tsshool = tsshool;
      }
       public String execute() throws Exception {
-      	Connection ct = DB_connect.connect();
+      	Connection connect = DB_connect.connect();
     	try
     	{ 
     		String sql = "select * from teacher";
     		stmt = (Statement)connect.createStatement();
     		ResultSet res = stmt.executeQuery(sql);
-    		String sql1 = "select * from teacher where te = '" + temail + "'";
+    		String sql1 = "select * from teacher where te = '" + te + "'";
     		res = stmt.executeQuery(sql1);
     		if(!res.next())
     		{
@@ -121,11 +123,11 @@ public class TinforAction {
     		}
     		else
     		{
-    			tname = new String(res.getString("tn"));
-    			tage = res.getInt("ta");
-    			temail = new String(res.getString("te"));
-    			tsex = res.getInt("ts");
-  				tjzgh = new String(res.getString("jzgh"));
+    			tn = new String(res.getString("tn"));
+    			ta = res.getInt("ta");
+    			te = new String(res.getString("te"));
+    			ts = res.getInt("ts");
+  				jzgh = new String(res.getString("jzgh"));
  				induction = new String(res.getString("induction"));
  				tc = new String(res.getString("tc"));
  				tsuccess = res.getInt("tsuccess"); 
@@ -134,7 +136,7 @@ public class TinforAction {
  				tm = new String(res.getString("tm"));
  				tb = res.getInt("tb");
  				tp = res.getInt("tp");
- 				tsschool = new String(res.getString("tsschool"));
+ 				tsshool = new String(res.getString("tsshool"));
   				connect.close();
   				return "success";
   			}

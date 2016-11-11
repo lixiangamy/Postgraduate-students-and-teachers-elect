@@ -20,7 +20,7 @@ function re(e)
 <tr>
 <td>
 您好，
-<s:property value="tna"/>
+<s:property value="sna"/>
 同学！
 </td>
 </tr>
@@ -44,16 +44,11 @@ function re(e)
 		</tr>
 		<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
 			<s:iterator value="DL" id="a" status = "s">
-			<s:iterator value="DIL" id="b" status = "N">
 			<tr>
 			<td>
 				<p onclick="re(this);"><s:property value="a"/> </p> 
 			</td>
-			<td>
-				<s:property value="b"/>
-			</td>
 			</tr>
-			</s:iterator>
 			</s:iterator>
 		</table>
 		<tr>
@@ -68,9 +63,9 @@ function re(e)
 				<p onclick="re(this);"><s:property value="C"/> </p> 
 			</td>
 			<td>
-				<a href="cs?state=1"><button>同意</button></a>
-				<a href="cs?state=2"><button>不同意</button></a>
-				<a href="cs?state=3"><button>待定</button></a>
+				<a href="cs?state=1&tn=<s:property value="C"/>&sna=${sna}&semail=${semail}"><button>同意</button></a>
+				<a href="cs?state=2&tn=<s:property value="C"/>&sna=${sna}&semail=${semail}"><button>不同意</button></a>
+				<a href="cs?state=3&tn=<s:property value="C"/>&sna=${sna}&semail=${semail}"><button>待定</button></a>
 			</td>
 			</tr>
 			</s:iterator>

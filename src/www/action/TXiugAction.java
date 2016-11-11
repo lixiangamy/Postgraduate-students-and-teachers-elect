@@ -1,14 +1,7 @@
 package www.action;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-//dx点击导师名字，显示导师信息
-public class CheckdcAction {
-
-	Statement stmt;
-	private String dx;//姓名
+public class TXiugAction {
+	private String tn;//姓名
 	private int ta;//年龄
 	private String te;//email
 	private int ts;//性别
@@ -22,12 +15,11 @@ public class CheckdcAction {
  	private int tb;//是否要求学生读博
  	private int tp;//对学生排名的要求
  	private String tsshool;//对学生学校的要求
+
   	//照片
   	
- 	
- 	
-     public String getDx(){
-  		return dx;
+     public String getTn(){
+  		return tn;
   	}
      public int getTa(){
   		return ta;
@@ -68,8 +60,8 @@ public class CheckdcAction {
      public String getTsshool(){
   		return tsshool;
   	}
-      public void setDx(String dx) {
-          this.dx = dx;
+      public void setTn(String tn) {
+          this.tn = tn;
       }
       public void setTa(int ta) {
           this.ta = ta;
@@ -110,45 +102,8 @@ public class CheckdcAction {
      public void setTsshool(String tsshool) {
          this.tsshool = tsshool;
      }
-      public String execute() throws Exception {
-      	Connection connect = DB_connect.connect();
-    	
-    		String sql = "select * from teacher";
-    		stmt = (Statement)connect.createStatement();
-    		ResultSet res = stmt.executeQuery(sql);
-    		String sql1 = "select * from teacher where tn = '" + dx + "'";
-    		res = stmt.executeQuery(sql1);
-    		if(!res.next())
-    		{
-    			return "error";
-    		}
-    		else
-    		{
-    			dx = new String(res.getString("tn"));
-    			ta = res.getInt("ta");
-    			ts = res.getInt("ts");
-  				jzgh = new String(res.getString("jzgh"));
- 				induction = new String(res.getString("induction"));
- 				tc = new String(res.getString("tc"));
- 				tsuccess = res.getInt("tsuccess"); 
- 				tx = res.getInt("tx");
- 				if(tx==1)//如果允许显示
- 				{
- 					te = new String(res.getString("te"));
- 				}
- 				else
- 				{
- 					te = "--@--";
- 				}
- 				tschool = new String(res.getString("tschool"));
- 				tm = new String(res.getString("tm"));
- 				tb = res.getInt("tb");
- 				tp = res.getInt("tp");
- 				tsshool = new String(res.getString("tsshool"));
-  				connect.close();
-  				return "success";
-  			}
-
-    	
-    }
+     public String execute() throws Exception {
+     	
+     	return "success";
+     }
 }
