@@ -20,7 +20,7 @@ function re(e)
 <tr>
 <td>
 ฤ๚บรฃฌ
-<s:property value="tna"/>
+<s:property value="sna"/>
 อฌังฃก
 </td>
 </tr>

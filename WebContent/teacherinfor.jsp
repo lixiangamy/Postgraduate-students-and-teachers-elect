@@ -8,11 +8,24 @@
 <head>
 <meta http-equiv="Content-Type" content="textml; charset=UTF-8">
 <title>学生信息</title>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script language="javascript" src="script/trim.js">
+</script><!--导入脚本-->  
+<script language="javascript">  
+function check(){  
+    var pwd = document.teacherform.number.value;//得到用户输入的密码  
+    var email = document.teacherform.e.value;//得到用户输入的E-mail  
+    if(pwd.trim()==""){alert("密码不可以为空!!!");return;}//密码为空时提示用户  
+    else if(pwd.trim().length<3){alert("密码长度不得少于3!!!");return;}//密码长度小于6时提示用户  
+    else if(email.trim()==""){alert("E-mail不得为空!!!");return;}//E-mail为空时提示用户  
+    document.teacherform.submit();             //将表单提交  
+}
+</script>
 </head>
-<body bgcolor="Bisque">
 <body>
-<center>
--------------------------------------------------------------------------------------
+<jsp:useBean id="e" class="www.action.TinforAction" scope="session"/> 
+<body bgcolor="Bisque">
 <h1>学生信息</h1>
 	<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
 	<form action="tback" name="teacherform" method="post">   

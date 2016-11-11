@@ -12,6 +12,7 @@ public class SinforAction {
 	private int sage;//年龄
 	private String semail;//email
 	private int ssex;//性别
+	private String ssh;//身份证号
 	private String sxuehao;//学号
 	private String sschool;//本科院校
 	private String sm;//本科专业
@@ -33,6 +34,9 @@ public class SinforAction {
     }
     public int getSsex(){
 		return ssex;
+	}
+    public String getSsh(){
+		return ssh;
 	}
     public String getSxuehao(){
 		return sxuehao;
@@ -69,6 +73,9 @@ public class SinforAction {
     }
     public void setSsex(int ssex) {
         this.ssex = ssex;
+    }
+    public void setSsh(String ssh) {
+        this.ssh = ssh;
     }
     public void setSxuehao(String sxuehao) {
         this.sxuehao = sxuehao;
@@ -113,6 +120,7 @@ public class SinforAction {
 				sage = res.getInt("a");
 				semail = new String(res.getString("e"));
 				ssex = res.getInt("s");
+				ssh = new String(res.getString("sh"));
 				sxuehao = new String(res.getString("xuehao"));
 				sschool = new String(res.getString("school"));
 				sm = new String(res.getString("m"));
