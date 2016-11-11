@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import www.action.DB_connect;
 
 import www.action.DB_connect;
 
@@ -19,7 +23,11 @@ public class SapplyAction {
 	private String schena;//成果
 	private int sboa;//是否读博
 	private String snumbera;//密码
+<<<<<<< HEAD
 	private String error_message="注册失败！\n";
+=======
+	private String error_message="注册失败！";
+>>>>>>> 14
 	
 	//照片
 	Connection connect_temp = DB_connect.connect();
@@ -98,6 +106,7 @@ public class SapplyAction {
         this.snumbera = snumbera;
     }	
     public static boolean checkEmail(String email)
+<<<<<<< HEAD
     {// 验证邮箱的正则表达式 
      String format = "\\p{Alpha}\\w{2,15}[@][a-z0-9]{3,}[.]\\p{Lower}{2,}";
      //p{Alpha}:内容是必选的，和字母字符[\p{Lower}\p{Upper}]等价。如：200896@163.com不是合法的。
@@ -117,6 +126,18 @@ public class SapplyAction {
     public static boolean isEmptyString(String s)
     {
         if (s == null || s == "")
+=======
+    {// 验证邮箱的正则表达式
+    	String check = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";    
+		 Pattern regex = Pattern.compile(check);    
+		 Matcher matcher = regex.matcher(email);    
+		 boolean isMatched = matcher.matches();    
+		 return isMatched;
+    }
+    public static boolean isEmptyString(String s)
+    {
+        if (s == null || s.length()==0)
+>>>>>>> 14
         	return false;
         else 
         	return true;
@@ -127,7 +148,10 @@ public class SapplyAction {
 		else
 			return false;
 	}
+<<<<<<< HEAD
     
+=======
+>>>>>>> 14
 	public String execute() throws Exception {
 		java.sql.PreparedStatement flag = null;
 		java.sql.ResultSet re1 = null;
@@ -138,23 +162,39 @@ public class SapplyAction {
 		if(SapplyAction.isEmptyString(semaila))
 		{
 			if (SapplyAction.checkEmail(semaila))// 验证邮箱
+<<<<<<< HEAD
 			{   
 			 flag=connect_tempp.prepareStatement("select n,a,e,s,xuehao,school,m,p,c,b,number,d,"
 						+ "photo,prove,pone,ptwo,pthere from student where e = ?");
+=======
+			{
+				System.out.println(i); 
+			    flag=connect_tempp.prepareStatement("select n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,prove,pone,ptwo,pthere from student where e = ?");
+>>>>>>> 14
 				flag.setString(1, semaila);
 				re1=flag.executeQuery();
 				while(re1.next())//判断email是否重复
 				{
 					i=1;
+<<<<<<< HEAD
 					error_message+="该email已注册！\n";
 				}
+=======
+				}
+				if(i==1)
+					error_message+="该email已注册！\n";
+					
+>>>>>>> 14
 			}
 			else
 			{
 			 i=1;
 			 error_message+="邮箱名不符合规范！\n";
 			}
+<<<<<<< HEAD
 			
+=======
+>>>>>>> 14
 		}
 		else
 		{
@@ -223,12 +263,22 @@ public class SapplyAction {
 			em=1;
 			error_message+="请填写成果，若没有请填无！\n";
 		}
-		
+
+		if(sagea==0)
+		{
+			em=1;
+			error_message+="请填写年龄!\n";
+		}
+		if(sagea<0||sagea>=100)
+		{
+			em=1;
+			error_message+="请填写正确的年龄\n";
+		}
 		if(i==0&&em==0)
 		{
 			
-			String sql = "insert into student ( n,a,e,s,xuehao,school,m,p,c,b,number,"
-					+ "d,photo,prove,pone,ptwo,pthere ) value (?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into student ( n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,prove,pone,ptwo,pthere) value (?,?,?,?,?,?,?,?,?,?,?,?,'','','','','')";
+
 			PreparedStatement pStmt = connect_temp.prepareStatement(sql);
 			pStmt.setString(1,snamea);
 			pStmt.setInt(2,sagea);
@@ -241,6 +291,7 @@ public class SapplyAction {
 			pStmt.setString(9,schena);
 			pStmt.setInt(10,sboa);
 			pStmt.setString(11,snumbera);
+			pStmt.setInt(12,0);
 			pStmt.executeUpdate();
 			return "success";
 		}
@@ -248,3 +299,4 @@ public class SapplyAction {
 			return "error";
     }
 }
+

@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-//学生回应受到导师的邀请
+
 public class SyaoAction {
 	public String semail=null;
 	public String sna=null;
