@@ -27,6 +27,7 @@
                <br>本科专业(请填全称):  		<s:textfield name="smaina" label="本科专业"></s:textfield></br>
                <br>专业排名(如实填写):		<s:textfield name="srankinga" label="专业排名"></s:textfield></br>
                <br>是否读博:       <s:if test="sboa==null">
+
 				<s:radio name="sboa" label="是否读博" list="%{#{'1':'否','0':'是'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>

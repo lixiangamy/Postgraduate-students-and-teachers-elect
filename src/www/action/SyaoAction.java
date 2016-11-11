@@ -24,67 +24,58 @@ public class SyaoAction {
     public ArrayList<String> getDL(){
 		return DL;
 	}
-    public void setDL(ArrayList<String> DL) {
-        this.DL = DL;
-    }
-    private ArrayList<String> DIL = new ArrayList<String>();
-    public ArrayList<String> getDIL(){
-		return DIL;
-	}
-    public void setDIL(ArrayList<String> DIL) {
-        this.DIL = DIL;
-    }
     private ArrayList<String> DLL = new ArrayList<String>();
     public ArrayList<String> getDLL(){
 		return DLL;
 	}
-    public void setDLL(ArrayList<String> DLL) {
-        this.DLL = DLL;
-    }
-   
-    Connection connect_tem = DB_connect.connect();
+    Connection connect_temz = DB_connect.connect();
     public String execute() throws Exception {
     	try {
-    		int f=0;
+    		DLL.clear();
+        	DL.clear();
+    		int f=0,cc;
     		Statement stmt;
     		String sql = "select * from ts where ste='" + semail + "'";
-    		stmt = (Statement)connect_tem.createStatement();
+    		stmt = (Statement)connect_temz.createStatement();
     		ResultSet rs = stmt.executeQuery(sql);
+    		String tean;
 			while(rs.next())
 			{
+				tean=new String(rs.getString("ten"));
+				cc=rs.getInt("statet");
 				f=1;
-				if(rs.getInt("statet")==0){
+				if(cc==0){
 					sna=rs.getString("stn");
-					DLL.add(new String(rs.getString("ten")));
+					DLL.add(tean);
 				}
 				else if(rs.getInt("statet")==1){
-					DIL.add("状态：同意");
 					sna=rs.getString("stn");
 					DL.add(new String(rs.getString("ten")));
+					DL.add("状态：同意");
 				}
 				else if(rs.getInt("statet")==2){
-					DIL.add("状态：不同意");
+					
 					sna=rs.getString("stn");
 					DL.add(new String(rs.getString("ten")));
+					DL.add("状态：不同意");
 				}
-				else if(rs.getInt("statet")==3){
-					DIL.add("状态：待定");
+				else if(cc==3){
 					sna=rs.getString("stn");
-					DL.add(new String(rs.getString("ten")));
+					DLL.add(tean);
 				}
 			}
 			if(f==1)
 			{
-				connect_tem.close();
+				connect_temz.close();
 				return "success";
 			}
 			else
 			{
-				connect_tem.close();
+				connect_temz.close();
 				return "error";
 			}
     	} catch (Exception e) {
-    		connect_tem.close();
+    		connect_temz.close();
 			return "error";
   	    }
     }

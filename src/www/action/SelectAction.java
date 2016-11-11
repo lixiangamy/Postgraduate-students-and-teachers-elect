@@ -61,10 +61,6 @@ public class SelectAction {
 	    	Statement stmt;
 			Statement stmt2;
 			int f=0;
-			System.out.print(tage);
-			System.out.print("***");
-			System.out.print(tindu);
-			System.out.print("***");
 			String sql = "select * from teacher";
 			stmt = (Statement)connect_temp.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
@@ -85,7 +81,7 @@ public class SelectAction {
 					if(rs.getInt("ta")<tage)
 					{
 						f=1;
-					}
+		 			}
 					if(!tindu.equals(rs.getString("induction"))&&!tindu.equals(""))
 					{
 						f=1;

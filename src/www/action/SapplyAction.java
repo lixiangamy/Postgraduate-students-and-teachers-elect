@@ -1,7 +1,10 @@
 package www.action;
 
 import java.sql.Connection;
+<<<<<<< HEAD
+=======
 import java.sql.PreparedStatement;
+>>>>>>> 114
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.regex.Matcher;
@@ -68,7 +71,7 @@ public class SapplyAction {
     public String getSnumbera(){
 		return snumbera;
 	}
-    
+
     public void setError_message(String error_message) {
         this.error_message = error_message;
     }
@@ -105,6 +108,7 @@ public class SapplyAction {
     public void setSnumbera(String snumbera) {
         this.snumbera = snumbera;
     }	
+
     public static boolean checkEmail(String email)
 <<<<<<< HEAD
     {// 验证邮箱的正则表达式 

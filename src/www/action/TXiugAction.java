@@ -1,12 +1,6 @@
 package www.action;
-//导师信息
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
 
-public class TinforAction {
-	Statement stmt;
+public class TXiugAction {
 	private String tn;//姓名
 	private int ta;//年龄
 	private String te;//email
@@ -108,43 +102,8 @@ public class TinforAction {
      public void setTsshool(String tsshool) {
          this.tsshool = tsshool;
      }
-      public String execute() throws Exception {
-      	Connection connect = DB_connect.connect();
-    	try
-    	{ 
-    		String sql = "select * from teacher";
-    		stmt = (Statement)connect.createStatement();
-    		ResultSet res = stmt.executeQuery(sql);
-    		String sql1 = "select * from teacher where te = '" + te + "'";
-    		res = stmt.executeQuery(sql1);
-    		if(!res.next())
-    		{
-    			return "error";
-    		}
-    		else
-    		{
-    			tn = new String(res.getString("tn"));
-    			ta = res.getInt("ta");
-    			te = new String(res.getString("te"));
-    			ts = res.getInt("ts");
-  				jzgh = new String(res.getString("jzgh"));
- 				induction = new String(res.getString("induction"));
- 				tc = new String(res.getString("tc"));
- 				tsuccess = res.getInt("tsuccess"); 
- 				tx = res.getInt("tx");
- 				tschool = new String(res.getString("tschool"));
- 				tm = new String(res.getString("tm"));
- 				tb = res.getInt("tb");
- 				tp = res.getInt("tp");
- 				tsshool = new String(res.getString("tsshool"));
-  				connect.close();
-  				return "success";
-  			}
-
-    	}
-    	catch(Exception e)
-    	{
-    		return "error";
-    	}
-    }
+     public String execute() throws Exception {
+     	
+     	return "success";
+     }
 }

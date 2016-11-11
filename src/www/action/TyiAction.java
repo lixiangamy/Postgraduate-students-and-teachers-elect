@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class TyiAction {
 	public String temail=null;
-    public String gettemail() {
+    public String getTemail() {
         return temail;
     }
     private ArrayList<String> TL = new ArrayList<String>();
