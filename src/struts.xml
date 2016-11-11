@@ -14,8 +14,8 @@
             <result name="error">/terror.jsp</result>
          </action>
          <action name="sapply" class="www.action.SapplyAction">
-            <result name="success">/begin.jsp</result>
-            <result name="error">/begin.jsp</result>
+            <result name="success">/sapplysuccess.jsp</result>
+            <result name="error">/sapplyerror.jsp</result>
         </action>
         <action name="tapply" class="www.action.TapplyAction">
             <result name="success">/begin.jsp</result>
