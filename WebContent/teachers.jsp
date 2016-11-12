@@ -32,10 +32,8 @@
  	<td>IfStudentToBeMater<s:property value="tb"/></td>
  	<td>StudentMustBetterThan:<s:property value="tp"/></td>
   	</tr>
- 	<tr>
- 	<input type="button" value="申请该导师" onclick="sq()"/>
- 	</tr>
   	</table>
+  	<a href="sapplyteacher?semail=${semail}&dx=${dx}&sna=${sna}"><button>申请此位导师</button></a> 
  <a href="javascript:history.back()">返回</a>
   </body>
  </html> 

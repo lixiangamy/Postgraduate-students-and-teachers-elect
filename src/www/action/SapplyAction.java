@@ -1,10 +1,7 @@
 package www.action;
 
 import java.sql.Connection;
-<<<<<<< HEAD
-=======
 import java.sql.PreparedStatement;
->>>>>>> 114
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -22,7 +19,7 @@ public class SapplyAction {
 	private String schena;//成果
 	private int sboa;//是否读博
 	private String snumbera;//密码
-	private String error_message="注册失败！\n";
+	private String error_message="注册失败！";
 	
 	//照片
 	Connection connect_temp = DB_connect.connect();
@@ -63,7 +60,7 @@ public class SapplyAction {
     public String getSnumbera(){
 		return snumbera;
 	}
-
+    
     public void setError_message(String error_message) {
         this.error_message = error_message;
     }
@@ -100,7 +97,6 @@ public class SapplyAction {
     public void setSnumbera(String snumbera) {
         this.snumbera = snumbera;
     }	
-
     public static boolean checkEmail(String email)
     {// 验证邮箱的正则表达式 
      String format = "\\p{Alpha}\\w{2,15}[@][a-z0-9]{3,}[.]\\p{Lower}{2,}";
@@ -120,7 +116,7 @@ public class SapplyAction {
     }
     public static boolean isEmptyString(String s)
     {
-        if (s == null || s == "")
+        if (s == null || s.length()==0)
         	return false;
         else 
         	return true;
@@ -131,7 +127,6 @@ public class SapplyAction {
 		else
 			return false;
 	}
-    
 	public String execute() throws Exception {
 		java.sql.PreparedStatement flag = null;
 		java.sql.ResultSet re1 = null;
@@ -141,23 +136,27 @@ public class SapplyAction {
 		int em=0;
 		if(SapplyAction.isEmptyString(semaila))
 		{
-			if (SapplyAction.checkEmail(semaila))// 验证邮箱
-			{   
-			 flag=connect_tempp.prepareStatement("select n,a,e,s,xuehao,school,m,p,c,b,number,d,"
-						+ "photo,prove,pone,ptwo,pthere from student where e = ?");
+			System.out.println(i);
+			//if (SapplyAction.checkEmail(semaila))// 验证邮箱
+			//{
+				System.out.println(i); 
+			    flag=connect_tempp.prepareStatement("select n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,prove,pone,ptwo,pthere from student where e = ?");
 				flag.setString(1, semaila);
 				re1=flag.executeQuery();
 				while(re1.next())//判断email是否重复
 				{
 					i=1;
-					error_message+="该email已注册！\n";
+					System.out.println(i);
 				}
-			}
-			else
-			{
-			 i=1;
-			 error_message+="邮箱名不符合规范！\n";
-			}
+				if(i==1)
+					error_message+="该email已注册！\n";
+					
+			//}
+			//else
+			//{
+			// i=1;
+			// error_message+="邮箱名不符合规范！\n";
+			//}
 			
 		}
 		else
@@ -231,8 +230,7 @@ public class SapplyAction {
 		if(i==0&&em==0)
 		{
 			
-			String sql = "insert into student ( n,a,e,s,xuehao,school,m,p,c,b,number,"
-					+ "d,photo,prove,pone,ptwo,pthere ) value (?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into student ( n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,prove,pone,ptwo,pthere) value (?,?,?,?,?,?,?,?,?,?,?,?,'','','','','')";
 			PreparedStatement pStmt = connect_temp.prepareStatement(sql);
 			pStmt.setString(1,snamea);
 			pStmt.setInt(2,sagea);
@@ -245,6 +243,7 @@ public class SapplyAction {
 			pStmt.setString(9,schena);
 			pStmt.setInt(10,sboa);
 			pStmt.setString(11,snumbera);
+			pStmt.setInt(12,0);
 			pStmt.executeUpdate();
 			return "success";
 		}

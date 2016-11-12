@@ -6,8 +6,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SyaoAction {
-	public String semail=null;
-	public String sna=null;
+	private String semail=null;
+	private String sna;
     public String getSemail() {
         return semail;
     }
@@ -45,22 +45,18 @@ public class SyaoAction {
 				cc=rs.getInt("statet");
 				f=1;
 				if(cc==0){
-					sna=rs.getString("stn");
 					DLL.add(tean);
 				}
 				else if(rs.getInt("statet")==1){
-					sna=rs.getString("stn");
 					DL.add(new String(rs.getString("ten")));
 					DL.add("状态：同意");
 				}
 				else if(rs.getInt("statet")==2){
 					
-					sna=rs.getString("stn");
 					DL.add(new String(rs.getString("ten")));
 					DL.add("状态：不同意");
 				}
 				else if(cc==3){
-					sna=rs.getString("stn");
 					DLL.add(tean);
 				}
 			}

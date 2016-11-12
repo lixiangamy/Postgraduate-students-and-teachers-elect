@@ -16,6 +16,7 @@
          <action name="sapply" class="www.action.SapplyAction">
             <result name="success">/sapplysuccess.jsp</result>
             <result name="error">/sapplyerror.jsp</result>
+
         </action>
         <action name="tapply" class="www.action.TapplyAction">
             <result name="success">/begin.jsp</result>
@@ -49,11 +50,19 @@
         </action>
          <action name="syi" class="www.action.SyiAction">
             <result name="success">/yxds.jsp</result>
-            <result name="error">/serror.jsp</result>
+            <result name="error">/yiyaoerror.jsp</result>
         </action>
         <action name="checkdx" class="www.action.CheckdcAction">
             <result name="success">/teachers.jsp</result>
             <result name="error">/terror.jsp</result>
+        </action>
+        <action name="sapplyteacher" class="www.action.SapplyteacherAction">
+            <result name="success">/student.jsp</result>
+            <result name="error">/yiyoudaoshierror.jsp</result>
+        </action>
+        
+        <action name="cs" class="www.action.StateAction">
+            <result name="success">/YYQXDS.jsp</result>
         </action>
         <action name="tyi" class="www.action.TyiAction">
             <result name="success">/yxsd.jsp</result>
@@ -61,7 +70,7 @@
         </action>
          <action name="syao" class="www.action.SyaoAction">
             <result name="success">/YYQXDS.jsp</result>
-            <result name="error">/serror.jsp</result>
+            <result name="error">/yiyaoerror.jsp</result>
         </action>
         <action name="tyao" class="www.action.TyaoAction">
             <result name="success">/YYQDDX.jsp</result>

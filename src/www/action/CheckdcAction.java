@@ -9,6 +9,8 @@ public class CheckdcAction {
 
 	Statement stmt;
 	private String dx;//姓名
+	private String semail;
+	private String sna;
 	private int ta;//年龄
 	private String te;//email
 	private int ts;//性别
@@ -24,8 +26,18 @@ public class CheckdcAction {
  	private String tsshool;//对学生学校的要求
   	//照片
   	
- 	
- 	
+ 	public String getSemail() {
+        return semail;
+    }
+    public void setSemail(String semail) {
+        this.semail=semail;
+    }
+    public String getSna() {
+        return sna;
+    }
+    public void setSna(String sna) {
+        this.sna=sna;
+    }
      public String getDx(){
   		return dx;
   	}

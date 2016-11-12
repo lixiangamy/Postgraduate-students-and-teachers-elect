@@ -17,15 +17,15 @@
 </tr>
 <br>
 </br>
-<a href="sinfor?semail=${semail}">个人信息</a> 
+<a href="sinfor?semail=${semail}&sna=<s:property value="sna"/>">个人信息</a> 
         
-<a href="stui?semail=${semail}">系统推荐</a> 
+<a href="stui?semail=${semail}&sna=<s:property value="sna"/>">系统推荐</a> 
         
-<a href="schoose?semail=${semail}">选择导师</a> 
+<a href="schoose?semail=${semail}&sna=<s:property value="sna"/>">选择导师</a> 
         
-<a href="syi?semail=${semail}">已申请导师</a> 
+<a href="syi?semail=${semail}&sna=<s:property value="sna"/>">已申请导师</a> 
         
-<a href="syao?semail=${semail}">导师邀请</a> 
+<a href="syao?semail=${semail}&sna=<s:property value="sna"/>">导师邀请</a> 
 </center>
 </body>
 </html>

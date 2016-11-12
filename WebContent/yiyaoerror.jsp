@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>已申请导师</title>
+<title>重复选导师</title>
 </head>
 <body>
 <center>
@@ -26,25 +26,7 @@
 <a href="syi?semail=${semail}&sna=${sna}">已申请导师</a> 
         
 <a href="syao?semail=${semail}&sna=${sna}">导师邀请</a> 
-<br>
-</br>
-		<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
-			<tr>
-			<s:iterator value="BL" id="a" status = "s">
-			 	<s:if test="#s.odd||#s.first">            
-	              <tr> 
-	              <td bgcolor="#e0ffff">
-					<a href="checkdx?dx=<s:property value="a"/>&sna=${sna}&semail=${semail}"><s:property value="a"/> </a>  
-					</td>  
-					</s:if>       
-				   <s:elseif test="#s.even||#s.last">    
-				   <td bgcolor="#e0ffff">
-					<s:property value="a"/>
-					</td>  
-	           		 </tr>          
-	       			 </s:elseif>     
-			</s:iterator>
-		</table>
+<h1>无</h1>
 </center>
 </body>
 </html>

@@ -6,9 +6,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SchooseAction {
-	public String semail=null;
-	public String sna=null;
-	public String te=null;
+	private String semail=null;
+	private String sna=null;
+	private String te=null;
     public String getSemail() {
         return semail;
     }
@@ -53,7 +53,6 @@ public class SchooseAction {
 			ResultSet rs2 = stmt2.executeQuery(sql2);
 			while(rs2.next())
 			{
-				sna=rs2.getString("sn");
 				if(te.equals(new String(rs2.getString("te"))))
 				{
 					f=1;

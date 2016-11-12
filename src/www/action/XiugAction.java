@@ -1,11 +1,15 @@
 package www.action;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class XiugAction {
+	Statement stmt;
 	private String sname;//姓名
 	private int sage;//年龄
 	private String semail;//email
 	private int ssex;//性别
-	private String ssh;//身份证号
 	private String sxuehao;//学号
 	private String sschool;//本科院校
 	private String sm;//本科专业
@@ -27,9 +31,6 @@ public class XiugAction {
     }
     public int getSsex(){
 		return ssex;
-	}
-    public String getSsh(){
-		return ssh;
 	}
     public String getSxuehao(){
 		return sxuehao;
@@ -67,9 +68,6 @@ public class XiugAction {
     public void setSsex(int ssex) {
         this.ssex = ssex;
     }
-    public void setSsh(String ssh) {
-        this.ssh = ssh;
-    }
     public void setSxuehao(String sxuehao) {
         this.sxuehao = sxuehao;
     }
@@ -95,7 +93,16 @@ public class XiugAction {
         this.sd = sd;
     }
     public String execute() throws Exception {
-    	System.out.print(sd+"***");
-    	return "success";
+    	System.out.print(semail+"***");
+    	Connection ct = DB_connect.connect();
+
+		stmt = (Statement)ct.createStatement();
+		String sql=" update student set n='" + sname + "',a=" + sage + ",s=" + ssex + " ,xuehao='" + sxuehao + "' ,school='" + sschool + "' ,m='" + sm + "' ,p='" + sp + "' ,c='" + sc + "' ,b=" + sb + " ,number='" + snumber + "' ,d=" + sd + " " + " where e = '" + semail + "' ";
+		stmt.executeUpdate(sql);
+		System.out.print(stmt.executeUpdate(sql)+"***");
+
+		
+		return "success";
+    	
     }
 }
