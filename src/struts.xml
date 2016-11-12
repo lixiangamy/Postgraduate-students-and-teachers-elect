@@ -18,8 +18,8 @@
             <result name="error">/sapplyerror.jsp</result>
         </action>
         <action name="tapply" class="www.action.TapplyAction">
-            <result name="success">/begin.jsp</result>
-            <result name="error">/begin.jsp</result>
+            <result name="success">/tapplysuccess.jsp</result>
+            <result name="error">/tapplyerror.jsp</result>
         </action>
          <action name="sinfor" class="www.action.SinforAction">
             <result name="success">/studentinfor.jsp</result>
