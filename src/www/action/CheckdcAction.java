@@ -8,9 +8,10 @@ import java.util.ArrayList;
 public class CheckdcAction {
 
 	Statement stmt;
-	private String dx;//姓名
 	private String semail;
 	private String sna;
+	
+	private String dx;//姓名
 	private int ta;//年龄
 	private String te;//email
 	private int ts;//性别

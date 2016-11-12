@@ -27,7 +27,7 @@
             <result name="error">/begin.jsp</result>
         </action>
         <action name="tinfor" class="www.action.TinforAction">
-            <result name="success">/begin.jsp</result>
+            <result name="success">/teacherinfor.jsp</result>
             <result name="error">/begin.jsp</result>
         </action>
          <action name="stui" class="www.action.StuiAction">
@@ -48,25 +48,36 @@
         <action name="select" class="www.action.SelectAction">
             <result name="success">/xuandaoshi.jsp</result>
         </action>
+        <action name="tselect" class="www.action.TSelectAction">
+            <result name="success">/xuanxuesheng.jsp</result>
+        </action>
          <action name="syi" class="www.action.SyiAction">
             <result name="success">/yxds.jsp</result>
             <result name="error">/yiyaoerror.jsp</result>
+        </action>
+        <action name="tyi" class="www.action.TyiAction">
+            <result name="success">/yxsd.jsp</result>
+            <result name="error">/tyiyaoerror.jsp</result>
         </action>
         <action name="checkdx" class="www.action.CheckdcAction">
             <result name="success">/teachers.jsp</result>
             <result name="error">/terror.jsp</result>
         </action>
+        <action name="checksx" class="www.action.CheckscAction">
+            <result name="success">/studentshow.jsp</result>
+            <result name="error">/serror.jsp</result>
+        </action>
         <action name="sapplyteacher" class="www.action.SapplyteacherAction">
             <result name="success">/student.jsp</result>
             <result name="error">/yiyoudaoshierror.jsp</result>
         </action>
+        <action name="tapplystudent" class="www.action.TapplystudentAction">
+            <result name="success">/teacher.jsp</result>
+            <result name="error">/yiyouxueshengerror.jsp</result>
+        </action>
         
         <action name="cs" class="www.action.StateAction">
             <result name="success">/YYQXDS.jsp</result>
-        </action>
-        <action name="tyi" class="www.action.TyiAction">
-            <result name="success">/yxsd.jsp</result>
-            <result name="error">/begin.jsp</result>
         </action>
          <action name="syao" class="www.action.SyaoAction">
             <result name="success">/YYQXDS.jsp</result>
