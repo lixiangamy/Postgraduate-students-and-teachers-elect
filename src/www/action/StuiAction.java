@@ -1,8 +1,10 @@
 package www.action;
 
+import java.util.ArrayList;
+import java.sql.*;
 public class StuiAction {
-	public String semail=null;
-	private String sname;//姓名
+	public String semail;
+	private String sna;//姓名
 	private String sschool;//本科院校
 	private String sm;//本科专业
 	private int sp;//排名
@@ -14,82 +16,12 @@ public class StuiAction {
 	public void setSemail(String semail) {
         this.semail=semail;
     }
-    public String getSname(){
-		return sname;
+    public String getSna(){
+		return sna;
 	}
-    public String getSschool(){
-		return sschool;
-	}
-	public String getSm(){
-		return sm;
-	}
-    public int getSp(){
-		return sp;
-	}
-    public int getSb(){
-		return sb;
-	}
-    public void setSname(String sname) {
-        this.sname = sname;
+     public void setSna(String sna) {
+        this.sna = sna;
     }
-    public void setSschool(String sschool) {
-        this.sschool = sschool;
-    }
-    public void setSm(String sm) {
-        this.sm = sm;
-    }
-    public void setSp(int sp) {
-        this.sp = sp;
-    }
-    public void setSb(int sb) {
-        this.sb = sb;
-    }
-   
-    
-    private String tname;//姓名	
-    private String temail;//email
- 	private String tm;//要求学生的专业
- 	private int tb;//是否要求学生读博
- 	private int tp;//对学生排名的要求
- 	private String tsschool;//对学生学校的要求
- 	
-     public String getTname(){
-  		 return tname;
-     }
-     public String getTemail() {
-         return temail;
-     }
-     public String getTm(){
- 		return tm;
- 	}
-     public int getTb(){
- 		return tb;
- 	 }
-     public int getTp(){
- 		return tp;
- 	}
-     public String getTsschool(){
-  		return tsschool;
-  	}
-     public void setTname(String tname) {
-          this.tname = tname;
-      }
-      public void setTemail(String temail) {
-          this.temail = temail;
-      }
-     public void setTm(String tm) {
-         this.tm = tm;
-     }
-     public void setTb(int tb) {
-         this.tb = tb;
-     }
-     public void setTp(int tp) {
-         this.tp = tp;
-     }
-     public void setTsschool(String tsschool) {
-         this.tm = tsschool;
-     }
-     
      private ArrayList<String> BL = new ArrayList<String>();
 	 public ArrayList<String> getBL(){
 		 return BL;
@@ -98,56 +30,127 @@ public class StuiAction {
 	 Connection connect_temp2 = DB_connect.connect();
 	    
 	 public String execute() throws Exception {
-	    Statement stmt;
-		Statement stmt2;
-		int f=0;//是否满足四个条件
-		String sql = "select * from teacher";
+	    Statement stmt,stmt2;
+		int f=0;
+		String sql = "select * from student where e='"+ semail +"'";
 		stmt = (Statement)connect_temp.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		while(rs.next())
 		{
-			f=0;
-			temail=rs.getString("te");
-			String sql2 = "select * from st where se='" + semail + "'";//挑出学生已选择的导师
+			sschool=new String(rs.getString("school"));
+			sm=new String(rs.getString("m"));
+			sb=rs.getInt("b");
+			sp=rs.getInt("p");
+		}
+		String sql2 = "select * from teacher";
+		stmt2 = (Statement)connect_temp2.createStatement();
+		ResultSet rs2 = stmt2.executeQuery(sql2);
+		while(rs2.next())
+	  	{
+			if(sschool.equals(new String(rs2.getString("tsshool")))&&sm.equals(new String(rs2.getString("tm")))&&sp<=rs2.getInt("tp")&&sb>=rs2.getInt("tb"))
+			{
+				BL.add(new String(rs2.getString("tn")));
+				f+=1;
+			}
+		}
+		if(f<3)
+		{
+			sql2 = "select * from teacher";
 			stmt2 = (Statement)connect_temp2.createStatement();
-			ResultSet rs2 = stmt2.executeQuery(sql2);
+			rs2 = stmt2.executeQuery(sql2);
 			while(rs2.next())
 		  	{
-				sname=rs2.getString("sn");
-				if(te.equals(new String(rs2.getString("te"))))
-				 {
-					f=1;
-				}
-				if(!tm.equals(""))
+				if(sschool.equals(new String(rs2.getString("tsshool")))&&sm.equals(new String(rs2.getString("tm")))&&rs2.getInt("tp")==0&&sb>=rs2.getInt("tb"))
 				{
-					if(!sm.equals(rs.getString("tm"))&&!sm.equals(""))
-					{
-					  	f=1;
-					}
-				}
-				if(rs.getInt("tb")!=sb)
-				{
-					f=1;
-				}
-				if(rs.getInt("tp")<sp)
-				{
-					f=1;
-				}
-				if(!tsschool.equals(""))
-				{
-					if(!sschool.equals(rs.getString("tsschool"))&&!sschool.equals(""))
-				  	{
-				  		f=1;
-				  	}
-				 }
-				if(f==0)
-				{
-					BL.add(new String(rs.getString("tn")));
+					BL.add(new String(rs2.getString("tn")));
+					f+=1;
 				}
 			}
-		
-		
-			return "success";
 		}
-	}
+		if(f<3)
+		{
+			sql2 = "select * from teacher";
+			stmt2 = (Statement)connect_temp2.createStatement();
+			rs2 = stmt2.executeQuery(sql2);
+			while(rs2.next())
+		  	{
+				if(sschool.equals(new String(rs2.getString("tsshool")))&&"无".equals(new String(rs2.getString("tm")))&&sp<=rs2.getInt("tp")&&sb>=rs2.getInt("tb"))
+				{
+					BL.add(new String(rs2.getString("tn")));
+					f+=1;
+				}
+			}
+		}
+		if(f<3)
+		{
+			sql2 = "select * from teacher";
+			stmt2 = (Statement)connect_temp2.createStatement();
+			rs2 = stmt2.executeQuery(sql2);
+			while(rs2.next())
+		  	{
+				if("无".equals(new String(rs2.getString("tsshool")))&&sm.equals(new String(rs2.getString("tm")))&&sp<=rs2.getInt("tp")&&sb>=rs2.getInt("tb"))
+				{
+					BL.add(new String(rs2.getString("tn")));
+					f+=1;
+				}
+			}
+		}
+		if(f<3)
+		{
+			sql2 = "select * from teacher";
+			stmt2 = (Statement)connect_temp2.createStatement();
+			rs2 = stmt2.executeQuery(sql2);
+			while(rs2.next())
+		  	{
+				if(sschool.equals(new String(rs2.getString("tsshool")))&&"无".equals(new String(rs2.getString("tm")))&&rs2.getInt("tp")==0&&sb>=rs2.getInt("tb"))
+				{
+					BL.add(new String(rs2.getString("tn")));
+					f+=1;
+				}
+			}
+		}
+		if(f<3)
+		{
+			sql2 = "select * from teacher";
+			stmt2 = (Statement)connect_temp2.createStatement();
+			rs2 = stmt2.executeQuery(sql2);
+			while(rs2.next())
+		  	{
+				if("无".equals(new String(rs2.getString("tsshool")))&&sm.equals(new String(rs2.getString("tm")))&&rs2.getInt("tp")==0&&sb>=rs2.getInt("tb"))
+				{
+					BL.add(new String(rs2.getString("tn")));
+					f+=1;
+				}
+			}
+		}
+		if(f<3)
+		{
+			sql2 = "select * from teacher";
+			stmt2 = (Statement)connect_temp2.createStatement();
+			rs2 = stmt2.executeQuery(sql2);
+			while(rs2.next())
+		  	{
+				if(sschool.equals(new String(rs2.getString("tsshool")))&&"无".equals(new String(rs2.getString("tm")))&&rs2.getInt("tp")==0&&sb>=rs2.getInt("tb"))
+				{
+					BL.add(new String(rs2.getString("tn")));
+					f+=1;
+				}
+			}
+		}
+		if(f<3)
+		{
+			sql2 = "select * from teacher";
+			stmt2 = (Statement)connect_temp2.createStatement();
+			rs2 = stmt2.executeQuery(sql2);
+			while(rs2.next())
+		  	{
+				if("无".equals(new String(rs2.getString("tsshool")))&&"无".equals(new String(rs2.getString("tm")))&&rs2.getInt("tp")==0&&sb>=rs2.getInt("tb"))
+				{
+					BL.add(new String(rs2.getString("tn")));
+					f+=1;
+				}
+			}
+		}
+		return "success";
+	 }
 }

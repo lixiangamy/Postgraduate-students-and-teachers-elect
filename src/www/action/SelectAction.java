@@ -11,8 +11,9 @@ public class SelectAction {
 	private String te=null;
 	private String tindu=null;
 	private String tname=null;
-	private int tage=0;
-		public String getSemail() {
+	private int tage;
+		
+	public String getSemail() {
 	        return semail;
 	    }
 	    public void setSemail(String semail) {

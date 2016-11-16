@@ -6,6 +6,7 @@ import java.sql.Statement;
 
 public class TloginAction {
 	private String tnumber;
+	private String tname;
 	private String temail;
 	Connection connect = DB_connect.connect();
     public String getTnumber() {
@@ -14,11 +15,17 @@ public class TloginAction {
     public String getTemail() {
         return temail;
     }
+    public String getTname() {
+        return tname;
+    }
     public void setTnumber(String tnumber) {
         this.tnumber = tnumber;
     }
     public void setTemail(String temail) {
         this.temail = temail;
+    }
+    public void setTname(String tname) {
+        this.tname = tname;
     }
     public String execute() throws Exception {
 	  	Statement stmt;
@@ -27,6 +34,7 @@ public class TloginAction {
 		ResultSet rs = stmt.executeQuery(sql);
 		while(rs.next()){
 			if(tnumber.equals(rs.getString("tnumber"))){
+				tname=new String(rs.getString("tn"));
 				connect.close();
 				return "success";
 			}

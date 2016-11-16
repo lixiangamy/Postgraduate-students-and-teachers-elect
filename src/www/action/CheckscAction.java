@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class CheckscAction {
 	Statement stmt;
 	private String temail;
-	private String tna;
+	private String tname;
 	
 	private String sx;//姓名
 	private int sage;//年龄
@@ -22,6 +22,17 @@ public class CheckscAction {
 	private int sb;//是否读博
 	private String snumber;//密码
 	private int sd;//是否有导师
+	private String photo;//生活照
+	private String pone;//三个证明
+	private String ptwo;
+	private String pthree;
+	private String prove;//学号证明
+	private String path="/space/uppicture/";//路径
+	private String photopath=null;//生活照
+	private String ponepath=null;//三个证明
+	private String ptwopath=null;
+	private String pthreepath=null;
+	private String provepath=null;//学号证明
 	//照片
 	
 	public String getTemail() {
@@ -30,11 +41,11 @@ public class CheckscAction {
     public void setTemail(String temail) {
         this.temail=temail;
     }
-    public String getTna() {
-        return tna;
+    public String getTname() {
+        return tname;
     }
-    public void setTna(String tna) {
-        this.tna=tna;
+    public void setTname(String tname) {
+        this.tname=tname;
     }
     public String getSx(){
 		return sx;
@@ -72,6 +83,36 @@ public class CheckscAction {
     public int getSd(){
 		return sd;
 	}
+    public String getPhoto(){
+		return photo;
+	}
+    public String getPone(){
+		return pone;
+	}
+    public String getPtwo(){
+		return ptwo;
+	}
+    public String getPthree(){
+		return pthree;
+	}
+    public String getProve(){
+		return prove;
+	}
+    public String getPhotopath(){
+		return photopath;
+	}
+    public String getPonepath(){
+		return ponepath;
+	}
+    public String getPtwopath(){
+		return ptwopath;
+	}
+    public String getPthreepath(){
+		return pthreepath;
+	}
+    public String getProvepath(){
+		return provepath;
+	}
     public void setSx(String sx) {
         this.sx = sx;
     }
@@ -108,6 +149,21 @@ public class CheckscAction {
     public void setSd(int sd) {
         this.sd = sd;
     }
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+    public void setPone(String pone) {
+        this.pone = pone;
+    }
+    public void setPtwo(String ptwo) {
+        this.ptwo = ptwo;
+    }
+    public void setPthree(String pthree) {
+        this.pthree = pthree;
+    }
+    public void setProve(String prove) {
+        this.prove = prove;
+    }
     public String execute() throws Exception {
     	Connection ct = DB_connect.connect();
     	try
@@ -117,11 +173,7 @@ public class CheckscAction {
 			ResultSet res = stmt.executeQuery(sql);
 			String sql1 = "select * from student where n = '" + sx + "'";
 			res = stmt.executeQuery(sql1);
-			if(!res.next())
-			{
-				return "error";
-			}
-			else
+			while(res.next())
 			{
 				sx = new String(res.getString("n"));
 				sage = res.getInt("a");
@@ -135,10 +187,56 @@ public class CheckscAction {
 				sb = res.getInt("b");
 				snumber = new String(res.getString("number"));//但是不显示密码
 				sd = res.getInt("d");
-				ct.close();
-				return "success";
+				photo = new String(res.getString("photo"));
+				System.out.print("***"+photo);
+				if(photo.equals("无"))
+				{
+					photopath = path+"无.png";
+				}
+				else
+				{
+					photopath = path+photo;
+				}
+				pone = new String(res.getString("pone"));
+				if(pone.equals("无"))
+				{
+					ponepath = path+"无.png";
+				}
+				else
+				{
+					ponepath = path+pone;
+				}
+				ptwo = new String(res.getString("ptwo"));
+				if(ptwo.equals("无"))
+				{
+					ptwopath = path+"无.png";
+				}
+				else
+				{
+					ptwopath = path+ptwo;
+				}
+				pthree = new String(res.getString("pthree"));
+				if(pthree.equals("无"))
+				{
+					pthreepath = path+"无.png";
+				}
+				else
+				{
+					pthreepath = path+pthree;
+				}
+				prove = new String(res.getString("prove"));
+				if(prove.equals("无"))
+				{
+					provepath = path+"无.png";
+				}
+				else
+				{
+					provepath = path+prove;
+				}
 			}
-			
+			System.out.println(sx);
+			ct.close();
+			return "success";
 		}
     	catch(Exception e)
     	{

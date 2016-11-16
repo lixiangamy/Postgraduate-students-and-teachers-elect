@@ -1,60 +1,64 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html;charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>导师注册</title>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
-</script>
-<script type="text/javascript">
-function checkLast(str){  
-    var flag=false;  
-    var ext=str.split('.')[str.split('.').length-1];  
-    if(ext=='jpg'){  
-        flag=true;  
-    }  
-    return flag;  
-}  
-function checkPerm(obj){  
-    if(!checkLast(obj.value.toLowerCase())){  
-        alert("上传文件格式错误！");  
-        document.getElementByIdx_x("permitSpan").innerHTML='<s:file name="permitFile" size="14" id="permitCheck" onchange="checkPerm(this);"></s:file>';  
-    }  
-}  
-</script>
 </head>
-<body>
-<center>
-   <s:form action="sapply">
-                <s:textfield name="semaila" label="邮箱" value="--@--"></s:textfield>
-                <s:textfield name="snamea" label="姓名"></s:textfield>
-                <s:textfield name="sagea" label="年龄" value="正整数"></s:textfield>
-                <s:if test="ssexa==null">
-				<s:radio name="ssexa" label="性别" list="%{#{'1':'男','0':'女'}}" value="1"></s:radio> 
+<body style="background:url('D:/t012ea_副本_副本_副本.jpg') no-repeat;">
+
+   <s:form action="tapply" theme="simple">
+  				<td>
+               <br>邮箱:  <s:textfield name="temaila" label="邮箱"></s:textfield></br>
+               <br>是否显示邮箱:       <s:if test="txemail==null">
+
+				<s:radio name="txemail" label="是否显示邮箱" list="%{#{'1':'是','0':'否'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>
-				<s:radio name="sgsexa" list="%{#{'1':'男','0':'女'}}" ></s:radio> 
-				</s:else>
-				<s:password name="smannuma" label="身份证号"></s:password>
-                <s:textfield name="snuma" label="学号"></s:textfield>
-                <s:textfield name="schoola" label="本科学校" value="请填全称"></s:textfield>
-                <s:textfield name="smaina" label="本科专业"></s:textfield>
-                <s:textfield name="srankinga" label="专业排名"></s:textfield>
-                <s:textfield name="srankinga" label="成果" value="获得过的奖项、做过的大项目" cssStyle="width:200px;height:100px"></s:textfield>
-				<s:if test="sboa==null">
-				<s:radio name="sboa" label="是否读博" list="%{#{'1':'否','0':'是'}}" value="1"></s:radio> 
+				<s:radio name="tgxemail" list="%{#{'1':'是','0':'否'}}" ></s:radio> 
+				</s:else></br>
+               <br>密码:         <s:password name="tnumbera" label="设置密码"></s:password>(要求长度不小于8)</br>
+               <br>姓名:         <s:textfield name="tnamea" label="姓名"></s:textfield></br>
+               <br>学校:<s:textfield name="tchoola" label="本科学校"></s:textfield></br>
+               <br>年龄:  <s:textfield name="tagea" label="年龄"></s:textfield></br>
+               <br>性别:      <s:if test="tsexa==null">
+				<s:radio name="tsexa" label="性别" list="%{#{'1':'男','0':'女'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>
-				<s:radio name="sgboa" list="%{#{'1':'否','0':'是'}}" ></s:radio> 
-				</s:else>
-				<span id="permitSpan"><s:file name="photofile" label="照片（jpg/png）"  size="40" onchange="checkPerm(this);">  
-                </s:file></span>
-                <s:password name="snumbera" label="设置密码"></s:password>
+				<s:radio name="tgsexa" list="%{#{'1':'男','0':'女'}}" ></s:radio> 
+				</s:else></br>
+               <br>教职工号:          <s:textfield name="tnuma" label="学号"></s:textfield></br>
+               
+  				<br>研究方向:<s:textfield name="tmaina" label="本科学校"></s:textfield>（请填汉字）</br>
+               
+ 				<br>要求学生的本科学校(请填全称):  		<s:textfield name="tsshool" label="本科专业">(若不要求请填无)</s:textfield></br>
+               <br>要求学生的本科专业(请填全称):  		<s:textfield name="tsmaina" label="本科专业">(若不要求请填无)</s:textfield></br>
+               <br>是否要求学生读博:       <s:if test="tsb==null">
+				<s:radio name="tsb" label="性别" list="%{#{'1':'是','0':'否'}}" value="1"></s:radio> 
+				</s:if>
+				<s:else>
+				<s:radio name="tgsb" list="%{#{'1':'是','0':'否'}}" ></s:radio> 
+				</s:else></br>
+               <br>对学生排名的要求:		<s:textfield name="tsp" label="专业排名">(若不要求请填0,不填默认为0)</s:textfield></br>
+               
+               <br>研究成果:(获得过的奖项、做过的大项目,若没有请填无)</br>
+               <br><s:textfield name="tchena" label="成果" cssStyle="width:200px;height:100px"></s:textfield></br>
+               
+				<br>本人生活照   （jpg/png<65k）：</br>
+				<s:file name="resume1" label="上传图片" />
+				<br>奖项/项目一（jpg/png<65k）：</br>
+				<s:file name="resume2" label="上传图片" />
+				<br>奖项/项目二（jpg/png<65k）：</br>
+				<s:file name="resume3" label="上传图片" />
+				<br>奖项/项目三（jpg/png<65k）：</br>
+				<s:file name="resume4" label="上传图片" />
+                
                 <s:submit value="注册"/>
                 <s:reset value="重置"/>
+                </td>
    </s:form>
-</center>
+
 </body>
 </html>

@@ -27,10 +27,11 @@ public class SapplyteacherAction {
          this.dx=dx;
      }
      Connection connect_n = DB_connect.connect();
+     Connection connect_n5 = DB_connect.connect();
      Connection connect_n2 = DB_connect.connect();
 	 public String execute() throws Exception {
 		Statement stmt2;
-		int z;
+		int z=0;
 		String de=null;
 		String sql2 = "select * from student where e='" + semail + "'";
 		stmt2 = (Statement)connect_n2.createStatement();
@@ -77,6 +78,16 @@ public class SapplyteacherAction {
 			{
 				de=new String(rs.getString("te"));
 			}
+			Statement stmt5;
+			String sql5 = "select * from st where tn='"+dx+"' and se='"+semail+"'";
+			stmt5 = (Statement)connect_n5.createStatement();
+			ResultSet rs5 = stmt5.executeQuery(sql5);
+			while(rs5.next())
+			{
+				connect_n.close();
+				return "twoerror";
+			}
+			connect_n5.close();
 			sql = "insert into st values('"+sna+"','"+semail+"','"+dx+"','"+de+"',0)";
 			stmt = (Statement)connect_n.createStatement();
 			z=stmt.executeUpdate(sql);

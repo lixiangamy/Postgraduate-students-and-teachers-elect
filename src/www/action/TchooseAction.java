@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class TchooseAction {
 	private String temail=null;
-	private String tna=null;
+	private String tname=null;
 	private String se=null;
     public String getTemail() {
         return temail;
@@ -15,11 +15,11 @@ public class TchooseAction {
     public void setTemail(String temail) {
         this.temail=temail;
     }
-    public String getTna() {
-        return tna;
+    public String getTname() {
+        return tname;
     }
-    public void setTna(String tna) {
-        this.tna=tna;
+    public void setTname(String tname) {
+        this.tname=tname;
     }
     public String getSe() {
         return se;
@@ -47,7 +47,7 @@ public class TchooseAction {
 		while(rs.next())
 		{
 			f=0;
-			se=rs.getString("se");
+			se=rs.getString("e");
 			String sql2 = "select * from ts where tee='" + temail + "'";
 			stmt2 = (Statement)connect_temp2.createStatement();
 			ResultSet rs2 = stmt2.executeQuery(sql2);
@@ -60,7 +60,7 @@ public class TchooseAction {
 			}
 			if(f==0)
 			{
-				BL.add(new String(rs.getString("stn")));
+				BL.add(new String(rs.getString("n")));
 			}
 		}
 		return "success";

@@ -6,12 +6,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 //dx点击导师名字，显示导师信息
 public class CheckdcAction {
-
 	Statement stmt;
+	private String dx;//姓名
 	private String semail;
 	private String sna;
-	
-	private String dx;//姓名
 	private int ta;//年龄
 	private String te;//email
 	private int ts;//性别
@@ -25,6 +23,16 @@ public class CheckdcAction {
  	private int tb;//是否要求学生读博
  	private int tp;//对学生排名的要求
  	private String tsshool;//对学生学校的要求
+ 	private String tnumber;//密码
+ 	private String tpone;//三个证明
+	private String tptwo;
+	private String tpthree;
+	private String tpfour;//生活照
+	private String path="/space/uppicture/";//路径
+	private String tponepath=null;//三个证明
+	private String tptwopath=null;
+	private String tpthreepath=null;
+	private String tpfourpath=null;//生活照
   	//照片
   	
  	public String getSemail() {
@@ -81,6 +89,33 @@ public class CheckdcAction {
      public String getTsshool(){
   		return tsshool;
   	}
+     public String getTnumber(){
+   		return tnumber;
+   	}
+     public String getTpone(){
+  		return tpone;
+  	}
+      public String getTptwo(){
+  		return tptwo;
+  	}
+      public String getTpthree(){
+  		return tpthree;
+  	}
+      public String getTpfour(){
+  		return tpfour;
+  	}
+      public String getTponepath(){
+  		return tponepath;
+  	}
+      public String getTptwopath(){
+  		return tptwopath;
+  	}
+      public String getTpthreepath(){
+  		return tpthreepath;
+  	}
+      public String getTpfourpath(){
+  		return tpfourpath;
+  	}
       public void setDx(String dx) {
           this.dx = dx;
       }
@@ -123,6 +158,21 @@ public class CheckdcAction {
      public void setTsshool(String tsshool) {
          this.tsshool = tsshool;
      }
+     public void setTnumber(String tnumber) {
+         this.tnumber = tnumber;
+     }
+     public void setTpone(String tpone) {
+         this.tpone = tpone;
+     }
+     public void setTptwo(String tptwo) {
+         this.tptwo = tptwo;
+     }
+     public void setTpthree(String tpthree) {
+         this.tpthree = tpthree;
+     }
+     public void setTprove(String tpfour) {
+         this.tpfour = tpfour;
+     }
       public String execute() throws Exception {
       	Connection connect = DB_connect.connect();
     	
@@ -131,11 +181,7 @@ public class CheckdcAction {
     		ResultSet res = stmt.executeQuery(sql);
     		String sql1 = "select * from teacher where tn = '" + dx + "'";
     		res = stmt.executeQuery(sql1);
-    		if(!res.next())
-    		{
-    			return "error";
-    		}
-    		else
+    		while(res.next())
     		{
     			dx = new String(res.getString("tn"));
     			ta = res.getInt("ta");
@@ -158,10 +204,46 @@ public class CheckdcAction {
  				tb = res.getInt("tb");
  				tp = res.getInt("tp");
  				tsshool = new String(res.getString("tsshool"));
-  				connect.close();
-  				return "success";
+  				tnumber = new String(res.getString("tnumber"));
+  				tpone = new String(res.getString("tpone"));
+				if(tpone.equals("无"))
+				{
+					tponepath = path+"无.png";
+				}
+				else
+				{
+					tponepath = path+tpone;
+				}
+				tptwo = new String(res.getString("tptwo"));
+				if(tptwo.equals("无"))
+				{
+					tptwopath = path+"无.png";
+				}
+				else
+				{
+					tptwopath = path+tptwo;
+				}
+				tpthree = new String(res.getString("tpthree"));
+				if(tpthree.equals("无"))
+				{
+					tpthreepath = path+"无.png";
+				}
+				else
+				{
+					tpthreepath = path+tpthree;
+				}
+				tpfour = new String(res.getString("tpfour"));
+				if(tpfour.equals("无"))
+				{
+					tpfourpath = path+"无.png";
+				}
+				else
+				{
+					tpfourpath = path+tpfour;
+				}
   			}
-
+    		connect.close();
+    		return "success";
     	
     }
 }

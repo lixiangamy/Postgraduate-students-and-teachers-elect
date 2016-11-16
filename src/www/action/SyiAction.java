@@ -31,6 +31,7 @@ public class SyiAction {
     public String execute() throws Exception {
     	try {
     		int f=0;
+    		BL.clear();
     		Statement stmt;
     		String sql = "select * from st where se='" + semail + "'";
     		stmt = (Statement)connect_temp.createStatement();

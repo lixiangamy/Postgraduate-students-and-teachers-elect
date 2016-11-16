@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class TSelectAction {
 	private String temail=null;
-	private String tna=null;
+	private String tname=null;
 	private String se=null;
 	private String sschool=null;
 	private String sm=null;
@@ -20,11 +20,11 @@ public class TSelectAction {
 	    public void setTemail(String temail) {
 	        this.temail=temail;
 	    }
-	    public String getTna() {
-	        return tna;
+	    public String getTname() {
+	        return tname;
 	    }
-	    public void setTna(String tna) {
-	        this.tna=tna;
+	    public void setTname(String tname) {
+	        this.tname=tname;
 	    }
 	    public String getSe() {
 	        return se;
@@ -80,7 +80,7 @@ public class TSelectAction {
 			ResultSet rs1 = stmt.executeQuery(sql);
 			while(rs1.next())
 			{
-				tna=new String(rs1.getString("tn"));
+				tname=new String(rs1.getString("tn"));
 			}
 			sql = "select * from student";
 			stmt = (Statement)connect_temp.createStatement();
@@ -88,30 +88,30 @@ public class TSelectAction {
 			while(rs.next())
 			{
 				f=0;
-				se=rs.getString("se");
+				se=rs.getString("e");
 				String sql2 = "select * from ts where tee='" + temail + "'";
 				stmt2 = (Statement)connect_temp2.createStatement();
 				ResultSet rs2 = stmt2.executeQuery(sql2);
 				while(rs2.next())
 				{
-					if(se.equals(new String(rs2.getString("se"))))
+					if(se.equals(new String(rs2.getString("ste"))))
 					{
 						f=1;
 					}
 				}
-				if(rs.getInt("sp")>sp)
+				if(rs.getInt("p")>sp&&sp!=0)
 				{
 					f=1;
 	 			}
-				if(rs.getInt("sb")!=sb)
+				if(sb==1&&rs.getInt("b")!=sb)
 				{
 					f=1;
 	 			}
-				if(!sschool.equals(rs.getString("sschool"))&&!sschool.equals(""))
+				if(!sschool.equals(rs.getString("school"))&&!sschool.equals(""))
 				{
 					f=1;
 				}
-				if(!sm.equals(rs.getString("sm"))&&!sm.equals(""))
+				if(!sm.equals(rs.getString("m"))&&!sm.equals(""))
 				{
 					f=1;
 				}
@@ -127,3 +127,4 @@ public class TSelectAction {
 		return "success";
     }
 }
+

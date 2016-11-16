@@ -7,18 +7,18 @@ import java.util.ArrayList;
 //导师回应学生申请
 public class TyaoAction {
 	public String temail=null;
-	public String tna=null;
+	public String tname=null;
     public String getTemail() {
         return temail;
     }
     public void setTemail(String temail) {
         this.temail=temail;
     }
-    public String getTna() {
-        return tna;
+    public String getTname() {
+        return tname;
     }
-    public void setTna(String tna) {
-        this.tna=tna;
+    public void setTname(String tname) {
+        this.tname=tname;
     }
     private ArrayList<String> DL = new ArrayList<String>();
     public ArrayList<String> getDL(){
@@ -26,13 +26,6 @@ public class TyaoAction {
 	}
     public void setDL(ArrayList<String> DL) {
         this.DL = DL;
-    }
-    private ArrayList<String> DIL = new ArrayList<String>();
-    public ArrayList<String> getDIL(){
-		return DIL;
-	}
-    public void setDIL(ArrayList<String> DIL) {
-        this.DIL = DIL;
     }
     private ArrayList<String> DLL = new ArrayList<String>();
     public ArrayList<String> getDLL(){
@@ -44,33 +37,33 @@ public class TyaoAction {
    
     Connection connect_tem = DB_connect.connect();
     public String execute() throws Exception {
-    	try {
-    		int f=0;
+    	
+    		DLL.clear();
+        	DL.clear();
+    		int f=0,cc;
     		Statement stmt;
     		String sql = "select * from st where te='" + temail + "'";//申请该导师的所有学生
     		stmt = (Statement)connect_tem.createStatement();
     		ResultSet rs = stmt.executeQuery(sql);
+    		String sean;
 			while(rs.next())
 			{
+				sean=new String(rs.getString("sn"));
+				cc=rs.getInt("state");
 				f=1;
-				if(rs.getInt("statet")==0){
-					tna=rs.getString("tn");
-					DLL.add(new String(rs.getString("sn")));
+				if(cc==0){
+					DLL.add(sean);
 				}
-				else if(rs.getInt("statet")==1){
-					DIL.add("状态：同意");
-					tna=rs.getString("tn");
+				else if(rs.getInt("state")==1){
 					DL.add(new String(rs.getString("sn")));
+					DL.add("状态：同意");
 				}
-				else if(rs.getInt("statet")==2){
-					DIL.add("状态：不同意");
-					tna=rs.getString("tn");
+				else if(rs.getInt("state")==2){
 					DL.add(new String(rs.getString("sn")));
+					DL.add("状态：不同意");
 				}
-				else if(rs.getInt("statet")==3){
-					DIL.add("状态：待定");
-					tna=rs.getString("tn");
-					DL.add(new String(rs.getString("sn")));
+				else if(cc==3){
+					DLL.add(sean);
 				}
 			}
 			if(f==1)
@@ -83,9 +76,5 @@ public class TyaoAction {
 				connect_tem.close();
 				return "error";
 			}
-    	} catch (Exception e) {
-    		connect_tem.close();
-			return "error";
-  	    }
     }
 }
