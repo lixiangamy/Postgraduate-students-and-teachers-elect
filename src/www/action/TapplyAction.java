@@ -38,7 +38,8 @@ ModelDriven<file1>{
 	}
 	Connection connect_temp = DB_connect.connect();
 	Connection connect_tempp = DB_connect.connect();
-	public String getError_message(){
+
+	public String getError_messageo(){
 		return error_messageo;
 	}
     public String getTnamea(){
@@ -85,7 +86,9 @@ ModelDriven<file1>{
 		return tsshool;
 	}
 
-    public void setError_message(String error_messageo) {
+
+    public void setError_messageo(String error_messageo) {
+
         this.error_messageo = error_messageo;
     }
     public void setTnamea(String tnamea) {
@@ -152,7 +155,7 @@ ModelDriven<file1>{
 			return true;
 		else
 			return false;
-	}
+    }
 
 	public String execute() throws Exception {
 		java.sql.PreparedStatement flag = null;
@@ -161,13 +164,15 @@ ModelDriven<file1>{
 		java.sql.ResultSet re11 = null;
 		int i=0;
 		int em=0;
-		if(SapplyAction.isEmptyString(temaila))
+
+		if(TapplyAction.isEmptyString(temaila))
 		{
-			if (SapplyAction.checkEmail(temaila))// 验证邮箱
+			if (TapplyAction.checkEmail(temaila))// 验证邮箱
 
 			{
 				//System.out.println(i); 
-			    flag=connect_tempp.prepareStatement("select tn,ta,te,ts,jzgh,induction,tc,tsuccess,tx,tschool,tm,tb,tp,tsschool,tnumber,tpone,tptwo,tpthree,tpfour from teacher where te = ?");
+			    flag=connect_tempp.prepareStatement("select tn,ta,te,ts,jzgh,induction,tc,tsuccess,tx,tschool,tm,tb,tp,tsshool,tnumber,tpone,tptwo,tpthree,tpfour from teacher where te = ?");
+
 				flag.setString(1, temaila);
 				re1=flag.executeQuery();
 				while(re1.next())//判断email是否重复
@@ -191,9 +196,11 @@ ModelDriven<file1>{
 			em=1;
 			error_messageo+="请将填写邮箱！\n";
 		}
-		if(SapplyAction.isEmptyString(tnamea))
+
+		if(TapplyAction.isEmptyString(tnamea))
 		{
-			flagg=connect_temp.prepareStatement("select tn,ta,te,ts,jzgh,induction,tc,tsuccess,tx,tschool,tm,tb,tp,tsschool,tnumber,tpone,tptwo,tpthree,tpfour from teacher where tn = ?");
+			flagg=connect_temp.prepareStatement("select tn,ta,te,ts,jzgh,induction,tc,tsuccess,tx,tschool,tm,tb,tp,tsshool,tnumber,tpone,tptwo,tpthree,tpfour from teacher where tn = ?");
+
 			flagg.setString(1, tnamea);
 			re11=flagg.executeQuery();
 			while(re11.next())//判断姓名是否重复
@@ -209,7 +216,9 @@ ModelDriven<file1>{
 			em=1;
 			error_messageo+="请填写姓名！\n";
 		}
-		if(SapplyAction.isEmptyString(tnuma))
+
+		if(TapplyAction.isEmptyString(tnuma))
+
 		{
 			if(!tnuma.matches("^[\\da-zA-Z]*$"))//判断
 			{
@@ -222,9 +231,11 @@ ModelDriven<file1>{
 			em=1;
 			error_messageo+="请填写教职工号！\n";
 		}
-		if(SapplyAction.isEmptyString(tchoola))
+
+		if(TapplyAction.isEmptyString(tchoola))
 		{
-			if(!SapplyAction.isChinese(tchoola))
+			if(!TapplyAction.isChinese(tchoola))
+
 			{
 				i=1;
 				error_messageo+="请填写正确的学校！\n";
@@ -236,9 +247,11 @@ ModelDriven<file1>{
 			error_messageo+="请填写学校！\n";
 		}
 		
-		if(SapplyAction.isEmptyString(tmaina))
+
+		if(TapplyAction.isEmptyString(tmaina))
 		{
-			if(!SapplyAction.isChinese(tmaina))
+			if(!TapplyAction.isChinese(tmaina))
+
 			{
 				i=1;
 				error_messageo+="请填写正确的研究方向！\n";
@@ -250,9 +263,10 @@ ModelDriven<file1>{
 			error_messageo+="请填写研究方向！\n";
 		}
 		
-		if(SapplyAction.isEmptyString(tsshool))
+
+		if(TapplyAction.isEmptyString(tsshool))
 		{
-			if(!SapplyAction.isChinese(tsshool))
+			if(!TapplyAction.isChinese(tsshool))
 			{
 				i=1;
 				error_messageo+="请填写正确的学生学校！\n";
@@ -264,9 +278,11 @@ ModelDriven<file1>{
 			error_messageo+="请填写学生学校！若不要求请填无\n";
 		}
 		
-		if(SapplyAction.isEmptyString(tsmaina))
+
+		if(TapplyAction.isEmptyString(tsmaina))
 		{
-			if(!SapplyAction.isChinese(tsmaina))
+			if(!TapplyAction.isChinese(tsmaina))
+
 			{
 				i=1;
 				error_messageo+="请填写正确学生的专业！\n";
@@ -280,8 +296,9 @@ ModelDriven<file1>{
 		
 		
 		
-		
-		if(!SapplyAction.isEmptyString(tchena))
+
+		if(!TapplyAction.isEmptyString(tchena))
+
 		{
 			em=1;
 			error_messageo+="请填写成果，若没有请填无！\n";
@@ -310,7 +327,9 @@ ModelDriven<file1>{
 		if(i==0&&em==0)
 		{
 			
-			String sql = "insert into teacher ( tn,ta,te,ts,jzgh,induction,tc,tsuccess,tx,tschool,tm,tb,tp,tsschool,tnumber,tpone,tptwo,tpthree,tpfour) value (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+			String sql = "insert into teacher ( tn,ta,te,ts,jzgh,induction,tc,tsuccess,tx,tschool,tm,tb,tp,tsshool,tnumber,tpone,tptwo,tpthree,tpfour) value (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
 			PreparedStatement pStmt = connect_temp.prepareStatement(sql);
 			pStmt.setString(1,tnamea);
 			pStmt.setInt(2,tagea);
@@ -347,7 +366,9 @@ ModelDriven<file1>{
 				fos1.close();
 				fis1.close();
 				pStmt.setString(19,singleFile1.getResume1FileName());
-				System.out.println( singleFile1.getResume1FileName());
+
+				//System.out.println( singleFile1.getResume1FileName());
+
 	    	}
 			else
 				pStmt.setString(19,"无");
@@ -406,5 +427,7 @@ ModelDriven<file1>{
 		else
 			return "error";
     }
+
+
 }
 

@@ -1,13 +1,14 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8" import="java.util.*"
-    pageEncoding="UTF-8"%>
+
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>学生注册</title>
 </head>
-<body>
+<body style="background:url('D:/t012ea_副本_副本_副本.jpg') no-repeat;">
 
    <s:form action="sapply" theme="simple" enctype="multipart/form-data">
   				<td>
@@ -28,10 +29,10 @@
                <br>专业排名(如实填写):		<s:textfield name="srankinga" label="专业排名"></s:textfield></br>
                <br>是否读博:       <s:if test="sboa==null">
 
-				<s:radio name="sboa" label="是否读博" list="%{#{'1':'否','0':'是'}}" value="1"></s:radio> 
+				<s:radio name="sboa" label="是否读博" list="%{#{'1':'是','0':'否'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>
-				<s:radio name="sgboa" list="%{#{'1':'否','0':'是'}}" ></s:radio> 
+				<s:radio name="sgboa" list="%{#{'1':'是','0':'否'}}" ></s:radio> 
 				</s:else></br>
                <br>成果:(获得过的奖项、做过的大项目,若没有请填无)</br>
                <br><s:textfield name="schena" label="成果" cssStyle="width:200px;height:100px"></s:textfield></br>

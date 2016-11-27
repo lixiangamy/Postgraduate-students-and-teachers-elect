@@ -6,13 +6,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SelectAction {
-		public String semail=null;
-		public String sna=null;
-		public String te=null;
-		public String tindu=null;
-		public String tname=null;
-		public int tage;
-	    public String getSemail() {
+	private String semail=null;
+	private String sna=null;
+	private String te=null;
+	private String tindu=null;
+	private String tname=null;
+	private int tage;
+		
+	public String getSemail() {
 	        return semail;
 	    }
 	    public void setSemail(String semail) {
@@ -61,7 +62,14 @@ public class SelectAction {
 	    	Statement stmt;
 			Statement stmt2;
 			int f=0;
-			String sql = "select * from teacher";
+			String sql = "select * from student where e='" + semail + "'";
+			stmt = (Statement)connect_temp.createStatement();
+			ResultSet rs1 = stmt.executeQuery(sql);
+			while(rs1.next())
+			{
+				sna=new String(rs1.getString("n"));
+			}
+			sql = "select * from teacher";
 			stmt = (Statement)connect_temp.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next())
@@ -73,23 +81,22 @@ public class SelectAction {
 				ResultSet rs2 = stmt2.executeQuery(sql2);
 				while(rs2.next())
 				{
-					sna=rs2.getString("sn");
 					if(te.equals(new String(rs2.getString("te"))))
 					{
 						f=1;
 					}
-					if(rs.getInt("ta")<tage)
-					{
-						f=1;
-		 			}
-					if(!tindu.equals(rs.getString("induction"))&&!tindu.equals(""))
-					{
-						f=1;
-					}
-					if(!tname.equals(rs.getString("tn"))&&!tname.equals(""))
-					{
-						f=1;
-					}
+				}
+				if(rs.getInt("ta")<tage)
+				{
+					f=1;
+	 			}
+				if(!tindu.equals(rs.getString("induction"))&&!tindu.equals(""))
+				{
+					f=1;
+				}
+				if(!tname.equals(rs.getString("tn"))&&!tname.equals(""))
+				{
+					f=1;
 				}
 				if(f==0)
 				{

@@ -6,8 +6,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SyiAction {
-	public String semail=null;
-	public String sna=null;
+	private String semail=null;
+	private String sna;
     public String getSemail() {
         return semail;
     }
@@ -27,17 +27,11 @@ public class SyiAction {
     public void setBT(ArrayList<String> BL) {
         this.BL = BL;
     }
-    private ArrayList<String> IL = new ArrayList<String>();
-    public ArrayList<String> getIL(){
-		return IL;
-	}
-    public void setIT(ArrayList<String> IL) {
-        this.IL = IL;
-    }
     Connection connect_temp = DB_connect.connect();
     public String execute() throws Exception {
     	try {
     		int f=0;
+    		BL.clear();
     		Statement stmt;
     		String sql = "select * from st where se='" + semail + "'";
     		stmt = (Statement)connect_temp.createStatement();
@@ -46,18 +40,17 @@ public class SyiAction {
 			{
 				f=1;
 				BL.add(new String(rs.getString("tn")));
-				sna=rs.getString("sn");
 				if(rs.getInt("state")==0){
-					IL.add("导师未选择");
+					BL.add("状态：导师未选择");
 				}
 				else if(rs.getInt("state")==1){
-					IL.add("状态：同意");
+					BL.add("状态：同意");
 				}
 				else if(rs.getInt("state")==2){
-					IL.add("状态：不同意");
+					BL.add("状态：不同意");
 				}
 				else if(rs.getInt("state")==3){
-					IL.add("状态：待定");
+					BL.add("状态：待定");
 				}
 			}
 			if(f==0)

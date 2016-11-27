@@ -45,20 +45,37 @@ public class StateAction {
     Connection connect_tem3 = DB_connect.connect();
     Connection connect_tem = DB_connect.connect();
     Connection connect_tem2 = DB_connect.connect();
+    Connection connect_tem4 = DB_connect.connect();
     public String execute() throws Exception {
     	DLL.clear();
     	DL.clear();
     		int f=0;
-    		Statement stmt2;
+    		Statement stmt2,stmt4;
     		if(state==1)
     		{
     			String sql2 = "update student set d=1 where e='"+ semail +"'";
 	    		stmt2 = (Statement)connect_tem2.createStatement();
 	    		stmt2.executeUpdate(sql2);
-	    		
+	    		sql2 = "update teacher set tx=tx+1 where tn='"+ tn +"'";
+	    		stmt2 = (Statement)connect_tem2.createStatement();
+	    		stmt2.executeUpdate(sql2); 
+	    		sql2= "update st set state=2 where se='"+ semail +"'";
+	    		stmt2 = (Statement)connect_tem2.createStatement();
+	    		stmt2.executeUpdate(sql2);
+	    		sql2 = "update ts set statet=2 where ste='"+ semail +"'";
+	    		stmt2 = (Statement)connect_tem2.createStatement();
+	    		stmt2.executeUpdate(sql2);
+	    		connect_tem2.close();
+	    		String sql4 = "update st set state=1 where se='"+ semail +"' and tn='" + tn +"'";
+	    		stmt4 = (Statement)connect_tem4.createStatement();
+	    		stmt4.executeUpdate(sql4);
+	    		sql4 = "update ts set statet=1 where ste='"+ semail +"' and ten='" + tn +"'";
+	    		stmt4 = (Statement)connect_tem4.createStatement();
+	    		stmt4.executeUpdate(sql4);
+	    		connect_tem4.close();
     		}
     		Statement stmt3;
-    		String sql3 = "update ts set statet='" + state + "'where ten='" + tn +"'";
+    		String sql3 = "update ts set statet='" + state + "'where ste='"+ semail +"' and ten='" + tn +"'";
     		stmt3 = (Statement)connect_tem3.createStatement();
     		stmt3.executeUpdate(sql3);
     		Statement stmt;

@@ -18,6 +18,7 @@ ModelDriven<file>{
 	private int sagea;//年龄
 	private String semaila;//email
 	private int ssexa;//性别
+	private int sgsexa;
 	private String snuma;//学号
 	private String schoola;//本科院校
 	private String smaina;//本科专业
@@ -51,6 +52,9 @@ ModelDriven<file>{
     }
     public int getSsexa(){
 		return ssexa;
+	}
+    public int getSgsexa(){
+		return sgsexa;
 	}
     public String getSnuma(){
 		return snuma;
@@ -88,6 +92,9 @@ ModelDriven<file>{
     }
     public void setSsexa(int ssexa) {
         this.ssexa = ssexa;
+    }
+    public void setSgsexa(int sgsexa) {
+        this.sgsexa = sgsexa;
     }
     public void setSnuma(String snuma) {
         this.snuma = snuma;
@@ -263,7 +270,7 @@ ModelDriven<file>{
     		error_message+="请登陆学信网上传学号姓名匹配截图\n";
     		em=1;
     	}
-    	
+
 		if(i==0&&em==0)
 		{
 			
@@ -294,7 +301,9 @@ ModelDriven<file>{
 			}
 			fos.close();
 			fis.close();
-			System.out.println( singleFile.getResumeFileName());
+
+			//System.out.println( singleFile.getResumeFileName());
+
 
 			if(singleFile.getResume1FileName() != null)
 	    	{
@@ -310,7 +319,9 @@ ModelDriven<file>{
 				fos1.close();
 				fis1.close();
 				pStmt.setString(13,singleFile.getResume1FileName());
-				System.out.println( singleFile.getResume1FileName());
+
+				//System.out.println( singleFile.getResume1FileName());
+
 	    	}
 			else
 				pStmt.setString(13,"无");
