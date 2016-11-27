@@ -19,7 +19,7 @@
 				<s:else>
 				<s:radio name="tgxemail" list="%{#{'1':'否','0':'是'}}" ></s:radio> 
 				</s:else></br>
-               <br>密码:         <s:password name="tnumbera" label="设置密码"></s:password></br>
+               <br>密码:         <s:password name="tnumbera" label="设置密码"></s:password>(要求长度不小于8)</br>
                <br>姓名:         <s:textfield name="tnamea" label="姓名"></s:textfield></br>
                <br>学校:<s:textfield name="tchoola" label="本科学校"></s:textfield></br>
                <br>年龄:  <s:textfield name="tagea" label="年龄"></s:textfield></br>
@@ -33,28 +33,27 @@
                
   				<br>研究方向:<s:textfield name="tmaina" label="本科学校"></s:textfield></br>
                
- 				 <br>要求学生的本科学校(请填全称):  		<s:textfield name="tsshool" label="本科专业"></s:textfield></br>
-               <br>要求学生的本科专业(请填全称):  		<s:textfield name="tsmaina" label="本科专业"></s:textfield></br>
+ 				<br>要求学生的本科学校(请填全称):  		<s:textfield name="tsshool" label="本科专业">(若不要求请填无)</s:textfield></br>
+               <br>要求学生的本科专业(请填全称):  		<s:textfield name="tsmaina" label="本科专业">(若不要求请填无)</s:textfield></br>
                <br>是否要求学生读博:       <s:if test="tsb==null">
 				<s:radio name="tsb" label="性别" list="%{#{'1':'男','0':'女'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>
 				<s:radio name="tgsb" list="%{#{'1':'男','0':'女'}}" ></s:radio> 
 				</s:else></br>
-               <br>对学生排名的要求:		<s:textfield name="tsp" label="专业排名"></s:textfield></br>
+               <br>对学生排名的要求:		<s:textfield name="tsp" label="专业排名">(若不要求请填0,不填默认为0)</s:textfield></br>
                
                <br>研究成果:(获得过的奖项、做过的大项目,若没有请填无)</br>
                <br><s:textfield name="tchena" label="成果" cssStyle="width:200px;height:100px"></s:textfield></br>
-			   
-				<br>本人生活照   （jpg/png<65k）：                        	<span id="permitSpan"><s:file name="photofile" label="照片（jpg/png<65k）"  size="40" >  
-				</s:file></span></br>
-				
-                <br>奖项/项目一（jpg/png<65k）： 		<span id="pS1"><s:file name="ponefile" label="奖项/项目一（jpg/png<65k）"  size="40">
-                </s:file></span></br>
-                <br>奖项/项目二（jpg/png<65k）：		<span id="pS2"><s:file name="ptwofile" label="奖项/项目二（jpg/png<65k）"  size="40">
-                </s:file></span></br>
-                <br>奖项/项目三（jpg/png<65k）：		<span id="pS3"><s:file name="ptherefile" label="奖项/项目三（jpg/png<65k）"  size="40">
-                </s:file></span></br>
+               
+				<br>本人生活照   （jpg/png<65k）：</br>
+				<s:file name="resume1" label="上传图片" />
+				<br>奖项/项目一（jpg/png<65k）：</br>
+				<s:file name="resume2" label="上传图片" />
+				<br>奖项/项目二（jpg/png<65k）：</br>
+				<s:file name="resume3" label="上传图片" />
+				<br>奖项/项目三（jpg/png<65k）：</br>
+				<s:file name="resume4" label="上传图片" />
                 
                 <s:submit value="注册"/>
                 <s:reset value="重置"/>

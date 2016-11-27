@@ -5,10 +5,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import java.io.*;
 import www.action.DB_connect;
+import com.opensymphony.xwork2.ModelDriven;
+import www.model.file;
 
-public class SapplyAction {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class SapplyAction extends ActionSupport implements
+ModelDriven<file>{
 	private String snamea;//姓名
 	private int sagea;//年龄
 	private String semaila;//email
@@ -22,8 +27,14 @@ public class SapplyAction {
 	private String snumbera;//密码
 
 	private String error_message="注册失败！";
+  
+	private file singleFile = new file();
+
+	public file getModel()
+	{
+		return singleFile;
+	}
 	
-	//照片
 	Connection connect_temp = DB_connect.connect();
 	Connection connect_tempp = DB_connect.connect();
 	public String getError_message(){
@@ -123,7 +134,7 @@ public class SapplyAction {
 		else
 			return false;
 	}
-
+    
 	public String execute() throws Exception {
 		java.sql.PreparedStatement flag = null;
 		java.sql.ResultSet re1 = null;
@@ -137,7 +148,7 @@ public class SapplyAction {
 
 			{
 				System.out.println(i); 
-			    flag=connect_tempp.prepareStatement("select n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,prove,pone,ptwo,pthere from student where e = ?");
+			    flag=connect_tempp.prepareStatement("select n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,pone,ptwo,pthree,prove from student where e = ?");
 				flag.setString(1, semaila);
 				re1=flag.executeQuery();
 				while(re1.next())//判断email是否重复
@@ -164,7 +175,7 @@ public class SapplyAction {
 		if(SapplyAction.isEmptyString(snamea))
 		{
 			flagg=connect_temp.prepareStatement("select n,a,e,s,xuehao,school,m,p,c,b,number,d,"
-					+ "photo,prove,pone,ptwo,pthere from student where n = ?");
+					+ "photo,pone,ptwo,pthree,prove from student where n = ?");
 			flagg.setString(1, snamea);
 			re11=flagg.executeQuery();
 			while(re11.next())//判断姓名是否重复
@@ -234,10 +245,29 @@ public class SapplyAction {
 			em=1;
 			error_message+="请填写正确的年龄\n";
 		}
+		if(snumbera.length()<8)
+		{
+			em=1;
+			error_message+="请填写长度不少于8的密码\n";
+		}
+		String root = "d:\\uppicture\\";
+		File rootFile = new File(root);
+		if(!rootFile.exists())
+		{
+			rootFile.mkdir();
+		}
+		String filename = root + singleFile.getResumeFileName();	//+snamea+"0"
+		if(singleFile.getResumeFileName() == null)
+    	{
+    		addFieldError("resume", "请登陆学信网上传学号姓名匹配截图");
+    		error_message+="请登陆学信网上传学号姓名匹配截图\n";
+    		em=1;
+    	}
+    	
 		if(i==0&&em==0)
 		{
 			
-			String sql = "insert into student ( n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,prove,pone,ptwo,pthere) value (?,?,?,?,?,?,?,?,?,?,?,?,'','','','','')";
+			String sql = "insert into student ( n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,pone,ptwo,pthree,prove) value (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			PreparedStatement pStmt = connect_temp.prepareStatement(sql);
 			pStmt.setString(1,snamea);
@@ -251,8 +281,88 @@ public class SapplyAction {
 			pStmt.setString(9,schena);
 			pStmt.setInt(10,sboa);
 			pStmt.setString(11,snumbera);
-			
 			pStmt.setInt(12,0);
+			pStmt.setString(17,singleFile.getResumeFileName());
+
+			FileInputStream fis = new FileInputStream(singleFile.getResume());
+			FileOutputStream fos = new FileOutputStream(filename);
+			byte[] buffer = new byte[8192];
+			int n = 0;
+			while((n = fis.read(buffer)) > 0)
+			{
+				fos.write(buffer, 0, n);
+			}
+			fos.close();
+			fis.close();
+			System.out.println( singleFile.getResumeFileName());
+
+			if(singleFile.getResume1FileName() != null)
+	    	{
+				String filename1 = root +singleFile.getResume1FileName();//+ snamea+"1"		
+				FileInputStream fis1 = new FileInputStream(singleFile.getResume1());
+				FileOutputStream fos1 = new FileOutputStream(filename1);
+				byte[] buffer1 = new byte[8192];
+				int n1 = 0;
+				while((n1 = fis1.read(buffer1)) > 0)
+				{
+					fos1.write(buffer1, 0, n1);
+				}
+				fos1.close();
+				fis1.close();
+				pStmt.setString(13,singleFile.getResume1FileName());
+				System.out.println( singleFile.getResume1FileName());
+	    	}
+			else
+				pStmt.setString(13,"无");
+			if(singleFile.getResume2FileName() != null){
+			//System.out.println( singleFile.getResume1ContentType());
+			String filename2 = root + singleFile.getResume2FileName();//	snamea+"2"+	
+			FileInputStream fis2 = new FileInputStream(singleFile.getResume2());
+			FileOutputStream fos2 = new FileOutputStream(filename2);
+			byte[] buffer2 = new byte[8192];
+			int n2 = 0;
+			while((n2 = fis2.read(buffer2)) > 0)
+			{
+				fos2.write(buffer2, 0, n2);
+			}
+			fos2.close();
+			fis2.close();
+			pStmt.setString(14,singleFile.getResume2FileName());
+			}
+			else
+				pStmt.setString(14,"无");
+			if(singleFile.getResume3FileName() != null){
+			String filename3 = root + singleFile.getResume3FileName();	//snamea+"3"+	
+			FileInputStream fis3 = new FileInputStream(singleFile.getResume3());
+			FileOutputStream fos3 = new FileOutputStream(filename3);
+			byte[] buffer3 = new byte[8192];
+			int n3 = 0;
+			while((n3 = fis3.read(buffer3)) > 0)
+			{
+				fos3.write(buffer3, 0, n3);
+			}
+			fos3.close();
+			fis3.close();
+			pStmt.setString(15,singleFile.getResume3FileName());
+			}
+			else
+				pStmt.setString(15,"无");
+			if(singleFile.getResume4FileName() != null){
+			String filename4 = root + singleFile.getResume4FileName();		//snamea+"4"+
+			FileInputStream fis4 = new FileInputStream(singleFile.getResume4());
+			FileOutputStream fos4 = new FileOutputStream(filename4);
+			byte[] buffer4 = new byte[8192];
+			int n4 = 0;
+			while((n4 = fis4.read(buffer4)) > 0)
+			{
+				fos4.write(buffer4, 0, n4);
+			}
+			fos4.close();
+			fis4.close();
+			pStmt.setString(16,singleFile.getResume4FileName());
+			}
+			else
+				pStmt.setString(16,"无");
 			pStmt.executeUpdate();
 			return "success";
 		}

@@ -15,7 +15,8 @@ function re(e)
 }
 </script>
 </head>
-<body>
+
+<body style="background:url('D:/uppicture/´øÀ¶Ìõ±³¾°°å.jpg') no-repeat;">
 <center>
 <tr>
 <td>
