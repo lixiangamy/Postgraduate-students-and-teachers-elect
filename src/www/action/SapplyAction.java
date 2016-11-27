@@ -266,8 +266,8 @@ ModelDriven<file>{
 		String filename = root + singleFile.getResumeFileName();	//+snamea+"0"
 		if(singleFile.getResumeFileName() == null)
     	{
-    		addFieldError("resume", "请登陆学信网上传学号姓名匹配截图");
-    		error_message+="请登陆学信网上传学号姓名匹配截图\n";
+    		addFieldError("resume", "请上传学号姓名匹配图");
+    		error_message+="请上传学号姓名匹配图\n";
     		em=1;
     	}
 
@@ -302,8 +302,6 @@ ModelDriven<file>{
 			fos.close();
 			fis.close();
 
-			//System.out.println( singleFile.getResumeFileName());
-
 
 			if(singleFile.getResume1FileName() != null)
 	    	{
@@ -320,13 +318,13 @@ ModelDriven<file>{
 				fis1.close();
 				pStmt.setString(13,singleFile.getResume1FileName());
 
-				//System.out.println( singleFile.getResume1FileName());
+
 
 	    	}
 			else
 				pStmt.setString(13,"无");
 			if(singleFile.getResume2FileName() != null){
-			//System.out.println( singleFile.getResume1ContentType());
+
 			String filename2 = root + singleFile.getResume2FileName();//	snamea+"2"+	
 			FileInputStream fis2 = new FileInputStream(singleFile.getResume2());
 			FileOutputStream fos2 = new FileOutputStream(filename2);
