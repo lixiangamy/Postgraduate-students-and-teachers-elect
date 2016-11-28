@@ -305,7 +305,7 @@ ModelDriven<file>{
 
 			if(singleFile.getResume1FileName() != null)
 	    	{
-				String filename1 = root +singleFile.getResume1FileName();//+ snamea+"1"		
+				String filename1 = root +singleFile.getResume1FileName();
 				FileInputStream fis1 = new FileInputStream(singleFile.getResume1());
 				FileOutputStream fos1 = new FileOutputStream(filename1);
 				byte[] buffer1 = new byte[8192];
@@ -325,7 +325,7 @@ ModelDriven<file>{
 				pStmt.setString(13,"нч");
 			if(singleFile.getResume2FileName() != null){
 
-			String filename2 = root + singleFile.getResume2FileName();//	snamea+"2"+	
+			String filename2 = root + singleFile.getResume2FileName();
 			FileInputStream fis2 = new FileInputStream(singleFile.getResume2());
 			FileOutputStream fos2 = new FileOutputStream(filename2);
 			byte[] buffer2 = new byte[8192];
@@ -341,7 +341,7 @@ ModelDriven<file>{
 			else
 				pStmt.setString(14,"нч");
 			if(singleFile.getResume3FileName() != null){
-			String filename3 = root + singleFile.getResume3FileName();	//snamea+"3"+	
+			String filename3 = root + singleFile.getResume3FileName();
 			FileInputStream fis3 = new FileInputStream(singleFile.getResume3());
 			FileOutputStream fos3 = new FileOutputStream(filename3);
 			byte[] buffer3 = new byte[8192];
@@ -357,7 +357,7 @@ ModelDriven<file>{
 			else
 				pStmt.setString(15,"нч");
 			if(singleFile.getResume4FileName() != null){
-			String filename4 = root + singleFile.getResume4FileName();		//snamea+"4"+
+			String filename4 = root + singleFile.getResume4FileName();
 			FileInputStream fis4 = new FileInputStream(singleFile.getResume4());
 			FileOutputStream fos4 = new FileOutputStream(filename4);
 			byte[] buffer4 = new byte[8192];
