@@ -170,7 +170,6 @@ ModelDriven<file1>{
 			if (TapplyAction.checkEmail(temaila))// —È÷§” œ‰
 
 			{
-				//System.out.println(i); 
 			    flag=connect_tempp.prepareStatement("select tn,ta,te,ts,jzgh,induction,tc,tsuccess,tx,tschool,tm,tb,tp,tsshool,tnumber,tpone,tptwo,tpthree,tpfour from teacher where te = ?");
 
 				flag.setString(1, temaila);
@@ -367,13 +366,11 @@ ModelDriven<file1>{
 				fis1.close();
 				pStmt.setString(19,singleFile1.getResume1FileName());
 
-				//System.out.println( singleFile1.getResume1FileName());
 
 	    	}
 			else
 				pStmt.setString(19,"Œﬁ");
 			if(singleFile1.getResume2FileName() != null){
-			//System.out.println( singleFile.getResume1ContentType());
 			String filename2 = root + singleFile1.getResume2FileName();//	snamea+"2"+	
 			FileInputStream fis2 = new FileInputStream(singleFile1.getResume2());
 			FileOutputStream fos2 = new FileOutputStream(filename2);
