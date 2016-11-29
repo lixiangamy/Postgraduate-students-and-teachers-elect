@@ -62,7 +62,6 @@ public class file1 {
 	}
 	public void setResume2FileName(String resume2FileName)
 	{
-		//System.out.println(resume+"6666");
 		this.resume2FileName = resume2FileName;
 	}
 	public File getResume3()
@@ -87,7 +86,6 @@ public class file1 {
 	}
 	public void setResume3FileName(String resume3FileName)
 	{
-		//System.out.println(resume+"6666");
 		this.resume3FileName = resume3FileName;
 	}
 	public File getResume4()
