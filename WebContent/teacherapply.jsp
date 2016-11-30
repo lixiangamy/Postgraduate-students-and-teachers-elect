@@ -7,21 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>导师注册</title>
 </head>
-
 <body style="background:url('D:/t012ea_副本_副本_副本.jpg') no-repeat;">
-
    <s:form action="tapply" theme="simple">
-
   				<td>
                <br>邮箱:  <s:textfield name="temaila" label="邮箱"></s:textfield></br>
                <br>是否显示邮箱:       <s:if test="txemail==null">
-
-
 				<s:radio name="txemail" label="是否显示邮箱" list="%{#{'1':'是','0':'否'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>
 				<s:radio name="tgxemail" list="%{#{'1':'是','0':'否'}}" ></s:radio> 
-
 				</s:else></br>
                <br>密码:         <s:password name="tnumbera" label="设置密码"></s:password>(要求长度不小于8)</br>
                <br>姓名:         <s:textfield name="tnamea" label="姓名"></s:textfield></br>
@@ -34,26 +28,18 @@
 				<s:radio name="tgsexa" list="%{#{'1':'男','0':'女'}}" ></s:radio> 
 				</s:else></br>
                <br>教职工号:          <s:textfield name="tnuma" label="学号"></s:textfield></br>
-               
-
   				<br>研究方向:<s:textfield name="tmaina" label="本科学校"></s:textfield>（请填汉字）</br>
-
-               
  				<br>要求学生的本科学校(请填全称):  		<s:textfield name="tsshool" label="本科专业">(若不要求请填无)</s:textfield></br>
                <br>要求学生的本科专业(请填全称):  		<s:textfield name="tsmaina" label="本科专业">(若不要求请填无)</s:textfield></br>
                <br>是否要求学生读博:       <s:if test="tsb==null">
-
 				<s:radio name="tsb" label="性别" list="%{#{'1':'是','0':'否'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>
 				<s:radio name="tgsb" list="%{#{'1':'是','0':'否'}}" ></s:radio> 
-
 				</s:else></br>
                <br>对学生排名的要求:		<s:textfield name="tsp" label="专业排名">(若不要求请填0,不填默认为0)</s:textfield></br>
-               
                <br>研究成果:(获得过的奖项、做过的大项目,若没有请填无)</br>
                <br><s:textfield name="tchena" label="成果" cssStyle="width:200px;height:100px"></s:textfield></br>
-               
 				<br>本人生活照   （jpg/png<65k）：</br>
 				<s:file name="resume1" label="上传图片" />
 				<br>奖项/项目一（jpg/png<65k）：</br>
@@ -62,11 +48,9 @@
 				<s:file name="resume3" label="上传图片" />
 				<br>奖项/项目三（jpg/png<65k）：</br>
 				<s:file name="resume4" label="上传图片" />
-                
                 <s:submit value="注册"/>
                 <s:reset value="重置"/>
                 </td>
    </s:form>
-
 </body>
 </html>

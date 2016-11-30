@@ -13,11 +13,7 @@
             <result name="success">/teacher.jsp</result>
             <result name="error">/terror.jsp</result>
          </action>
-
 <action name="sapply" class="www.action.SapplyAction">
-
-         
-         
          <interceptor-ref name="fileUpload">
 			<param name="allowedTypes">
 		image/bmp,image/png,image/gif,image/jpeg,image/jpg 
@@ -25,14 +21,10 @@
 	<param name="maximumSize">2097152</param><!-- 限制大小 -->
          </interceptor-ref>		
          <interceptor-ref name="defaultStack"></interceptor-ref>
-         
-         
             <result name="success">/sapplysuccess.jsp</result>
             <result name="error">/sapplyerror.jsp</result>
         </action>
         <action name="tapply" class="www.action.TapplyAction">
-
-        
         <interceptor-ref name="fileUpload">
 			<param name="allowedTypes">
 		image/bmp,image/png,image/jpeg,image/jpg 
@@ -40,8 +32,6 @@
 	<param name="maximumSize">2097152</param><!-- 限制大小 -->
          </interceptor-ref>		
          <interceptor-ref name="defaultStack"></interceptor-ref>
-        
-
             <result name="success">/tapplysuccess.jsp</result>
             <result name="error">/tapplyerror.jsp</result>
         </action>

@@ -19,10 +19,11 @@
 </br>
 <br>
 </br>
+
 <s:property value ="error_messageo"/>
+
 <br>
 <a href="teacherapply.jsp"><button>重新注册</button></a>
-
 </br>
   </center>
 </body>
