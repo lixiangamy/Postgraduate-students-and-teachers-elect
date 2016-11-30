@@ -8,7 +8,9 @@
 </head>
 <body style="background:url('D:/t012e2f3f94da_副本_副本.jpg') no-repeat;">
 <center>
+
 注册成功！
+
 <br>
 <a href="studentlogin.jsp"><button>登陆</button></a>
 </br>

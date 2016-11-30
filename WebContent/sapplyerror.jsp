@@ -16,7 +16,9 @@
 </br>
 <br>
 </br>
+
 <s:property value ="error_message"/>
+
 <br>
 <a href="studentapply.jsp"><button>重新注册</button></a>
 </br>
