@@ -8,13 +8,10 @@
  
  </head>
  
- <body style="background:url('D:/t012e2f3f94da_副本_副本_副本.jpg') no-repeat;">
+ <body>
   <center>
    <br>
-         </br>
-         <br>
-         </br>
-         <br>
+        
          </br>
          <br>
          </br>
