@@ -130,7 +130,7 @@ public class StuiAction {
 			rs2 = stmt2.executeQuery(sql2);
 			while(rs2.next())
 		  	{
-				if(sschool.equals(new String(rs2.getString("tsshool")))&&"нч".equals(new String(rs2.getString("tm")))&&rs2.getInt("tp")==0&&sb>=rs2.getInt("tb"))
+				if("нч".equals(new String(rs2.getString("tsshool")))&&"нч".equals(new String(rs2.getString("tm")))&&sp<=rs2.getInt("tp")&&sb>=rs2.getInt("tb"))
 				{
 					BL.add(new String(rs2.getString("tn")));
 					f+=1;

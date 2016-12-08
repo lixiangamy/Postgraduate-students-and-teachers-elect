@@ -27,6 +27,8 @@
 <a href="syi?semail=${semail}&sna=<s:property value="sna"/>">已申请导师</a> 
         
 <a href="syao?semail=${semail}&sna=<s:property value="sna"/>">导师邀请</a> 
+<br>
+</br>
 --------------------------------------------------------------------------
   <h1>导师信息</h1>
   	<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">

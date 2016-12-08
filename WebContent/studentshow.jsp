@@ -35,12 +35,12 @@
   	<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
   	<tr>
  	<td>name:<s:property value="sx"/></td>
- 	<td> age:<s:property value="a"/> </td>
- 	<td>sex:<s:property value="s"/></td>
+ 	<td> age:<s:property value="sage"/> </td>
+ 	<td>sex:<s:property value="ssex"/></td>
   	<td rowspan="3">照片<img  src=<s:property value="photopath"/>> </td>
   	</tr>
   	<tr>
- 	<td>email:<s:property value="e"/></td>
+ 	<td>email:<s:property value="semail"/></td>
  	<td>studentnumber:<s:property value="sxuehao"/></td>
  	<td>school:<s:property value="sschool"/></td>
   	</tr>

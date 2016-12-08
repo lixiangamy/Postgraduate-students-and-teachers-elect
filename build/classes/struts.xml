@@ -14,8 +14,6 @@
             <result name="error">/terror.jsp</result>
          </action>
 <action name="sapply" class="www.action.SapplyAction">
-         
-         
          <interceptor-ref name="fileUpload">
 			<param name="allowedTypes">
 		image/bmp,image/png,image/gif,image/jpeg,image/jpg 
@@ -23,13 +21,10 @@
 	<param name="maximumSize">2097152</param><!-- 限制大小 -->
          </interceptor-ref>		
          <interceptor-ref name="defaultStack"></interceptor-ref>
-         
-         
             <result name="success">/sapplysuccess.jsp</result>
             <result name="error">/sapplyerror.jsp</result>
         </action>
         <action name="tapply" class="www.action.TapplyAction">
-        
         <interceptor-ref name="fileUpload">
 			<param name="allowedTypes">
 		image/bmp,image/png,image/jpeg,image/jpg 
@@ -37,18 +32,14 @@
 	<param name="maximumSize">2097152</param><!-- 限制大小 -->
          </interceptor-ref>		
          <interceptor-ref name="defaultStack"></interceptor-ref>
-        
-        
-            <result name="success">/tapplysuccess.jsp</result>
-            <result name="error">/tapplyerror.jsp</result>
+            <result name="success">/sapplysuccess.jsp</result>
+            <result name="error">/sapplyerror.jsp</result>
         </action>
          <action name="sinfor" class="www.action.SinforAction">
             <result name="success">/studentinfor.jsp</result>
-            <result name="error">/begin.jsp</result>
         </action>
         <action name="tinfor" class="www.action.TinforAction">
             <result name="success">/teacherinfor.jsp</result>
-            <result name="error">/begin.jsp</result>
         </action>
          <action name="stui" class="www.action.StuiAction">
             <result name="success">/stuij.jsp</result>
@@ -93,7 +84,7 @@
             <result name="success">/YYQXDS.jsp</result>
             <result name="error">/yiyaoerror.jsp</result>
         </action>
-        <action name="Tcs" class="www.action.TStateAction">
+        <action name="tcs" class="www.action.TStateAction">
             <result name="success">/YYQDDX.jsp</result>
             <result name="error">/tyiyaoerror.jsp</result>
         </action>

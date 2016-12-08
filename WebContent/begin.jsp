@@ -8,10 +8,13 @@
  
  </head>
  
- <body>
+ <body style="background:url('C:/Users/ASUS/workspace/345/bj_zhuce.jpg') no-repeat;">
   <center>
    <br>
-        
+         </br>
+         <br>
+         </br>
+         <br>
          </br>
          <br>
          </br>

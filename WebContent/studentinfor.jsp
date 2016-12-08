@@ -19,15 +19,15 @@
 </tr>
 <br>
 </br>
-<a href="sinfor?semail=${semail}&sna=<s:property value="sname"/>">个人信息</a> 
+<a href="sinfor?semail=${semail}&sna=<s:property value="sna"/>">个人信息</a> 
         
-<a href="stui?semail=${semail}&sna=<s:property value="sname"/>">系统推荐</a> 
+<a href="stui?semail=${semail}&sna=<s:property value="sna"/>">系统推荐</a> 
         
-<a href="schoose?semail=${semail}&sna=<s:property value="sname"/>">选择导师</a> 
+<a href="schoose?semail=${semail}&sna=<s:property value="sna"/>">选择导师</a> 
         
-<a href="syi?semail=${semail}&sna=<s:property value="sname"/>">已申请导师</a> 
+<a href="syi?semail=${semail}&sna=<s:property value="sna"/>">已申请导师</a> 
         
-<a href="syao?semail=${semail}&sna=<s:property value="sname"/>">导师邀请</a> 
+<a href="syao?semail=${semail}&sna=<s:property value="sna"/>">导师邀请</a> 
 <br>
 </br>
 --------------------------------------------------------------------------
@@ -36,7 +36,7 @@
 <table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900"> 
 	
 	<tr>
-	<td>name: <s:property value="sname"></s:property></td>
+	<td>name: <s:property value="sna"></s:property></td>
 	<s:hidden name="semail"></s:hidden>
 	<td>age:<s:textfield name="sage" value="%{sage}"></s:textfield></td>
 	<td>sex:<s:property value="ssex"></s:property></td>
