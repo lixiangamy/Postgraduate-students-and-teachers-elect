@@ -13,7 +13,7 @@
 <td>
 您好，
 <s:property value="sna"/>
-同学！
+导师！
 </td>
 </tr>
 <br>
@@ -33,29 +33,29 @@
   <h1>导师信息</h1>
   	<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
   	<tr>
- 	<td>name:<s:property value="dx"/></td>
- 	<td>age:<s:property value="ta"/> </td>
- 	<td>sex:<s:property value="ts"/></td>
+ 	<td>姓名:<s:property value="dx"/></td>
+ 	<td>年龄:<s:property value="ta"/> </td>
+ 	<td>性别:<s:property value="ts"/></td>
   	<td rowspan="3">照片<img  src=<s:property value="tpfourpath"/>></td>
   	</tr>
   	<tr>
- 	<td>email:<s:property value="te"/></td>
- 	<td>studentschool:<s:property value="tsschool"/></td>
- 	<td>teachernumber:<s:property value="jzgh"/></td>
+ 	<td>电子邮箱:<s:property value="te"/></td>
+ 	<td>要求学生本科院校:<s:property value="tsschool"/></td>
+ 	<td>教职工号:<s:property value="jzgh"/></td>
   	</tr>
   	<tr>
- 	<td>induction:<s:property value="induction"/></td>
- 	<td>success:<s:property value="tsuccess"/></td>
- 	<td>IfShowEmail:<s:property value="tx"/></td>
+ 	<td>研究方向:<s:property value="induction"/></td>
+ 	<td>已成功学生数量:<s:property value="tsuccess"/></td>
+ 	<td>是否显示邮箱信息:<s:property value="tx"/></td>
   	</tr>
   	<tr>
- 	<td>school:<s:property value="tschool"/></td>
- 	<td>StudentLearn:<s:property value="tm"/></td>
- 	<td>IfStudentToBeMater<s:property value="tb"/></td>
- 	<td>StudentMustBetterThan:<s:property value="tp"/></td>
+ 	<td>教师所在学校:<s:property value="tschool"/></td>
+ 	<td>要求学生专业:<s:property value="tm"/></td>
+ 	<td>是否要求学生有读博意愿:<s:property value="tb"/></td>
+ 	<td>要求学生最低专业排名:<s:property value="tp"/></td>
   	</tr>
   	<tr>
-	<td>chengguo:<s:property value="tc"/></td>
+	<td>科研成果:<s:property value="tc"/></td>
 	<td>证明照片一<img  src=<s:property value="tponepath"/>></td>
 	<td>证明照片二<img  src=<s:property value="tptwopath"/>></td>
 	<td>证明照片三<img  src=<s:property value="tpthreepath"/>></td>

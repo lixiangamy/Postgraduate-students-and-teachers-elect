@@ -35,31 +35,31 @@
 	<s:form action="tback" theme="simple" enctype="multipart/form-data"> 
 	<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900"> 
 	<tr>
-	<td>name:<s:property value="tname"/></td>
+	<td>姓名:<s:property value="tname"/></td>
 	<s:hidden name="temail"></s:hidden>
-	<td>age:<input name="ta" value="<s:property value='ta'/>"></td>
-	<td>sex:<s:property value="ts"/></td>
+	<td>年龄:<input name="ta" value="<s:property value='ta'/>"></td>
+	<td>性别:<s:property value="ts"/></td>
 	<td rowspan="4">照片<img  src=<s:property value="tpfourpath"/>></td>
 	</tr>
 	<tr>
-	<td>email:<s:property value="temail"/></td>
-	<td>StudentSchool:<input name="tsshool" value="<s:property value="tsshool"/>"></td>
-	<td>teachernumber:<s:property value="jzgh"/></td>
+	<td>电子邮箱:<s:property value="temail"/></td>
+	<td>要求学生本科院校:<input name="tsshool" value="<s:property value="tsshool"/>"></td>
+	<td>教职工号:<s:property value="jzgh"/></td>
 	</tr>
 	<tr>
-	<td>induction:<input name="induction" value="<s:property value="induction"/>"></td>
-	<td>success:<s:property value="tsuccess"/></td>
-	<td>IfShowEmail:<input name="tx" value="<s:property value="tx"/>"></td>
+	<td>研究方向:<input name="induction" value="<s:property value="induction"/>"></td>
+	<td>已成功学生数量:<s:property value="tsuccess"/></td>
+	<td>是否显示邮箱信息:<input name="tx" value="<s:property value="tx"/>"></td>
 	</tr>
 	<tr>
-	<td>school:<s:property value="tschool"/></td>
-	<td>StudentLearn:<input name="tm" value="<s:property value="tm"/>"></td>
-	<td>IfStudentToBeMater<input name="tb" value="<s:property value="tb"/>"></td>
+	<td>教师所在学校:<s:property value="tschool"/></td>
+	<td>要求学生专业:<input name="tm" value="<s:property value="tm"/>"></td>
+	<td>是否要求学生有读博意愿<input name="tb" value="<s:property value="tb"/>"></td>
 	</tr>
 	<tr>
-	<td>StudentMustBetterThan<input name="tp" value="<s:property value="tp"/>"></td>
-	<td colspan="2">chengguo:<input name="tc" value="<s:property value="tc"/>"></td>
-	<td>SecertNumber:<input name="tnumber" value="<s:property value="tnumber"/>"></td>
+	<td>要求学生最低专业排名<input name="tp" value="<s:property value="tp"/>"></td>
+	<td colspan="2">科研成果:<input name="tc" value="<s:property value="tc"/>"></td>
+	<td>密码:<input name="tnumber" value="<s:property value="tnumber"/>"></td>
 	</tr>
 	<tr>
 	<td>证明照片一<img  src=<s:property value="tponepath"/>></td>

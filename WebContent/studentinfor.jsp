@@ -36,26 +36,26 @@
 <table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900"> 
 	
 	<tr>
-	<td>name: <s:property value="sna"></s:property></td>
+	<td>姓名: <s:property value="sna"></s:property></td>
 	<s:hidden name="semail"></s:hidden>
-	<td>age:<s:textfield name="sage" value="%{sage}"></s:textfield></td>
-	<td>sex:<s:property value="ssex"></s:property></td>
+	<td>年龄:<s:textfield name="sage" value="%{sage}"></s:textfield></td>
+	<td>性别:<s:property value="ssex"></s:property></td>
 	<td rowspan="3">照片<img  src=<s:property value="photopath"/>></td>
 	</tr>
 	<tr>
-	<td>email:<s:property value="semail"></s:property></td>
-	<td>studentnumber:<s:property value="sxuehao"></s:property></td>
-	<td>school:<s:property value="sschool"></s:property></td>
+	<td>电子邮件:<s:property value="semail"></s:property></td>
+	<td>学号:<s:property value="sxuehao"></s:property></td>
+	<td>本科院校:<s:property value="sschool"></s:property></td>
 	</tr>
 	<tr>
-	<td>benkezhuanye:<s:property value="sm"></s:property></td>
-	<td>lanking:<s:property value="sp"></s:property></td>
-	<td>IfWantToBeMaster:<s:textfield name="sb" value="%{sb}"></s:textfield></td>
+	<td>本科专业:<s:property value="sm"></s:property></td>
+	<td>专业排名:<s:property value="sp"></s:property></td>
+	<td>是否有读博意向:<s:textfield name="sb" value="%{sb}"></s:textfield></td>
 	</tr>
 	<tr>
-	<td>HaveTeacher:<s:property value="sd"></s:property></td>
-	<td>mima:<s:textfield name="snumber" value="%{snumber}"></s:textfield></td>
-	<td colspan="2">chengguo:<s:textfield name="sc" value="%{sc}"></s:textfield></td>
+	<td>是否已选择导师:<s:property value="sd"></s:property></td>
+	<td>密码:<s:textfield name="snumber" value="%{snumber}"></s:textfield></td>
+	<td colspan="2">成果:<s:textfield name="sc" value="%{sc}"></s:textfield></td>
 	</tr>
 	<tr>
 	<td>证明照片一<img  src=<s:property value="ponepath"/>></td>

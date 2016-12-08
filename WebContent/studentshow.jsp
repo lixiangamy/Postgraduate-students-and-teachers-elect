@@ -13,7 +13,7 @@
 <td>
 您好，
 <s:property value="tname"/>
-导师！
+同学！
 </td>
 </tr>
 <br>
@@ -34,24 +34,24 @@
   <h1>学生信息</h1>
   	<table width="450" border="1" cellspacing="0" cellpadding="2" bordercolor="#009900">
   	<tr>
- 	<td>name:<s:property value="sx"/></td>
- 	<td> age:<s:property value="sage"/> </td>
- 	<td>sex:<s:property value="ssex"/></td>
+ 	<td>姓名:<s:property value="sx"/></td>
+ 	<td>年龄:<s:property value="sage"/> </td>
+ 	<td>性别:<s:property value="ssex"/></td>
   	<td rowspan="3">照片<img  src=<s:property value="photopath"/>> </td>
   	</tr>
   	<tr>
- 	<td>email:<s:property value="semail"/></td>
- 	<td>studentnumber:<s:property value="sxuehao"/></td>
- 	<td>school:<s:property value="sschool"/></td>
+ 	<td>电子邮箱:<s:property value="semail"/></td>
+ 	<td>学号:<s:property value="sxuehao"/></td>
+ 	<td>本科院校:<s:property value="sschool"/></td>
   	</tr>
   	<tr>
- 	<td>benkezhuanye:<s:property value="sm"/></td>
- 	<td>lanking:<s:property value="sp"/></td>
- 	<td>IfWantToBeMaster:<s:property value="sb"/></td>
+ 	<td>本科专业:<s:property value="sm"/></td>
+ 	<td>专业排名:<s:property value="sp"/></td>
+ 	<td>是否有读博意向:<s:property value="sb"/></td>
   	</tr>
   	<tr>
- 	<td>HaveTeacher:<s:property value="sd"/></td>
- 	<td colspan="3">chengguo:<s:property value="sc"/></td>
+ 	<td>是否已选导师:<s:property value="sd"/></td>
+ 	<td colspan="3">成果:<s:property value="sc"/></td>
   	</tr>
   	<tr>
 	<td>证明照片一<img  src=<s:property value="ponepath"/>> </td>
