@@ -1,29 +1,31 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>学生登录</title>
+	<title>学生登录</title>
+    <link type="text/css" rel="stylesheet" href="css/login.css">
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
 </head>
-<body style="background:url('D:/t012e2f3f94da_副本_副本_副本.jpg') no-repeat;">
-<center>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-   <s:form action="slogin">
-                <s:textfield name="semail" label="邮箱"></s:textfield>
-                <s:password name="snumber" label="密码"></s:password>
-                <s:submit value="确定"/>
-                <s:reset value="重置"/>
-   </s:form>
-</center>
+<body class="login_bj" >
+<div class="zhuce_body">
+	<div class="logo"><img src="images/logo.png" width="330" height="60" border="0"></div>
+    <div class="zhuce_kong login_kuang">
+    	<div class="zc">
+        	<div class="bj_bai">
+            <h3>登录</h3>
+       	  	  <s:form action="slogin">
+                <input name="semail" type="text" class="kuang_txt" placeholder="邮箱">
+                <input name="snumber" type="password" class="kuang_txt" placeholder="密码">
+                <s:submit value="登录" class="btn_zhuce"/>
+                </s:form>
+            </div>
+        	
+        </div>
+      
+    </div>
+
+</div>
+    
 </body>
 </html>

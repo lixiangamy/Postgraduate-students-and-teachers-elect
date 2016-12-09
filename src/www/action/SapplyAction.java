@@ -149,6 +149,8 @@ ModelDriven<file>{
 		java.sql.ResultSet re11 = null;
 		int i=0;
 		int em=0;
+		System.out.print(semaila);
+		System.out.print(schoola);
 		if(SapplyAction.isEmptyString(semaila))
 		{
 			if (SapplyAction.checkEmail(semaila))// —È÷§” œ‰

@@ -1,49 +1,65 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>学生注册</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>学生注册</title>
+    <link type="text/css" rel="stylesheet" href="css/login.css">
+
 </head>
-<body style="background:url('D:/t012ea_副本_副本_副本.jpg') no-repeat;">
-   <s:form action="sapply" theme="simple" enctype="multipart/form-data">
-  				<td>
-               <br>邮箱:  <s:textfield name="semaila" label="邮箱"></s:textfield></br>
-               <br>密码:         <s:password name="snumbera" label="设置密码"></s:password>(要求长度不小于8)</br>
-               <br>姓名:         <s:textfield name="snamea" label="姓名"></s:textfield></br>
-               <br>年龄:   <s:textfield name="sagea" label="年龄"></s:textfield></br>
-               <br>性别:         <s:if test="ssexa==null">
+<body class="login_bj" >
+
+<div class="zhuce_body">
+	<div class="logo"><img src="images/logo.png" width="330" height="60" border="0"></div>
+    <div class="zhuce_kong">
+    	<div class="zc">
+        	<div class="bj_bai">
+            <h3>欢迎注册</h3>
+       	  	   <s:form action="sapply" theme="simple" enctype="multipart/form-data">
+                <input name="snamea" type="text" class="kuang_txt phone" placeholder="姓名">
+                <input name="semaila" type="text" class="kuang_txt email" placeholder="邮箱">
+                <input name="snumbera" type="password" class="kuang_txt possword" placeholder="密码">
+                <input name="sagea" type="text" class="kuang_txt possword" placeholder="年龄">
+                <br><h2>性别: </h2>        <s:if test="ssexa==null">
 				<s:radio name="ssexa" label="性别" list="%{#{'1':'男','0':'女'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>
-				<s:radio name="sgsexa" list="%{#{'1':'男','0':'女'}}" ></s:radio> 
+				<s:radio name="sgsexa" color="#37b5f9" list="%{#{'1':'男','0':'女'}}" ></s:radio> 
 				</s:else></br>
-               <br>学号:          <s:textfield name="snuma" label="学号"></s:textfield></br>
-               <br>本科学校(请填全称):<s:textfield name="schoola" label="本科学校"></s:textfield></br>
-               <br>本科专业(请填全称):  		<s:textfield name="smaina" label="本科专业"></s:textfield></br>
-               <br>专业排名(如实填写):		<s:textfield name="srankinga" label="专业排名"></s:textfield></br>
-               <br>是否读博:       <s:if test="sboa==null">
-				<s:radio name="sboa" label="是否读博" list="%{#{'1':'是','0':'否'}}" value="1"></s:radio> 
+                <input name="snuma" type="text" class="kuang_txt phone" placeholder="学号">
+                <input name="schoola" type="text" class="kuang_txt phone" placeholder="本科学校(请填全称)">
+                <input name="smaina" type="text" class="kuang_txt phone" placeholder="本科专业(请填全称)">
+                <input name="srankinga" type="text" class="kuang_txt phone" placeholder="专业排名(如实填写)">
+               <br><h2>是否读博: </h2>    <s:if test="sboa==null">
+				<s:radio name="sboa" label="是否读博" color="#37b5f9" list="%{#{'1':'是','0':'否'}}" value="1"></s:radio> 
 				</s:if>
 				<s:else>
 				<s:radio name="sgboa" list="%{#{'1':'是','0':'否'}}" ></s:radio> 
 				</s:else></br>
-               <br>成果:(获得过的奖项、做过的大项目,若没有请填无)</br>
-               <br><s:textfield name="schena" label="成果" cssStyle="width:200px;height:100px"></s:textfield></br>
-			   <br>登陆学信网上传学号姓名匹配截图（jpg/png<65k）：</br>
+               <input name="schena" type="text" class="kuang_txt chengguo_kuang" placeholder="获得过的奖项、做过的项目,若没有填无">
+			   <br></br>
+			   <br></br>
+			   <br></br>
+			   <h4>学生证/卡证明照  （jpg/png<65k）：</h4>
 				<s:file name="resume" label="上传图片" />
-				<br>本人生活照   （jpg/png<65k）：</br>
+				<h4>本人生活照   （jpg/png<65k）：</h4>
 				<s:file name="resume1" label="上传图片" />
-				<br>奖项/项目一（jpg/png<65k）：</br>
-				<s:file name="resume2" label="上传图片" />
-				<br>奖项/项目二（jpg/png<65k）：</br>
-				<s:file name="resume3" label="上传图片" />
-				<br>奖项/项目三（jpg/png<65k）：</br>
-				<s:file name="resume4" label="上传图片" />
-                <s:submit value="注册"/>
-                <s:reset value="重置"/>
-                </td>
-   </s:form>
+				<h4>奖项/项目一（jpg/png<65k，可不传）：</h4>
+				<s:file name="resume2" label="上传图片" width="236"/>
+				<h4>奖项/项目二（jpg/png<65k，可不传）：</h4>
+				<s:file name="resume3" label="上传图片" width="236"/>
+				<h4>奖项/项目三（jpg/png<65k，可不传）：</h4>
+				<s:file name="resume4" label="上传图片" width="236"/>
+				 <br></br>
+                 <s:submit value="注册" class="btn_zhuce" />
+                </s:form>
+            </div>
+        	
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
