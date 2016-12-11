@@ -26,7 +26,7 @@ div.clear20{ clear: both; height: 20px; }
 
 /* Patterns */
 
-body.pattern1{ background: url(../images/patterns/pattern1.png) repeat; }
+body.pattern1{ background: url(../images/bj_zhuce.jpg) repeat; }
 body.pattern2{ background: url(../images/patterns/pattern2.png) repeat; }
 body.pattern3{ background: url(../images/patterns/pattern3.png) repeat; }
 body.pattern4{ background: url(../images/patterns/pattern4.png) repeat; }
@@ -95,9 +95,7 @@ ul.info li span.title{ font-family: 'Arvo', Verdana, Geneva, sans-serif; margin-
 #header div.decoration{ width: 29px; height: 8px; position: absolute; top: 0px; right: 30px; }
 #header div.social{ margin-top: 40px; }
 #header div.social a{ display: block; width: 24px; height: 24px; float: left; margin-left: 5px; }
-#header div.social a.flickr{ background-position: -24px 0; }
-#header div.social a.twitter{ background-position: -48px 0; }
-#header div.social a.facebook{ background-position: -72px 0; }
+
 
 /* End Header */
 
@@ -180,12 +178,19 @@ form.contact input.send{
 
 /* End Contact */
 
+/* Syao */
+
+/* End Syao */
+/* Tyao */
+
+/* End Tyao */
+
 /* Footer */
 
 #footer nav ul li{ float: left; }
 #footer nav ul li a{
 	display: block;
-	width: 174px;
+	width: 139px;
 	height: 49px;
 	text-align: center;
 	font: 14px/49px 'Arvo', Verdana, Geneva, sans-serif;
@@ -216,21 +221,7 @@ form.contact input.send{
 #header{ padding: 0 20px; }
 #header hgroup{ float: none; margin-left: -20px; padding: 0 20px 20px; border-bottom: 1px solid; }
 #header div.decoration{ right: 20px; }
-#header a.download{
-	font-size: 12px;
-	height: 40px;
-	line-height: 40px;
-	float: none; 
-	margin: 30px 0 0;
-	padding: 0;
-}
-#header div.social{ float: none; margin: 30px 0 10px 0; }
-#header div.social a{ margin-left: 30px; width: 32px; height: 32px; }
-#header div.social a.dribble{ background-position: 0 -24px; }
-#header div.social a.flickr{ background-position: -32px -24px; }
-#header div.social a.twitter{ background-position: -64px -24px; }
-#header div.social a.facebook{ background-position: -96px -24px; }
-	
+
 /* End Header */
 
 /* Home */

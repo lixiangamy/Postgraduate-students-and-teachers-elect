@@ -7,7 +7,34 @@
 <title>已邀请学生的导师</title>
 </head>
 
-<body style="background:url('D:/t012e2f3f94da_副本_副本.jpg') no-repeat;">
+<body id="purple" class="pattern1">
+    <div class="selector">
+        <form method="get">
+            <div class="clear"></div>
+        	<h3>Patterns</h3>
+            <ul class="patterns">
+                <li><a href="javascript:void(0)" id="pattern1" class="active"></a></li>
+                <li><a href="javascript:void(0)" id="pattern2"></a></li>
+                <li><a href="javascript:void(0)" id="pattern3"></a></li>
+                <div class="clear"></div>
+                <li><a href="javascript:void(0)" id="pattern4"></a></li>
+                <li><a href="javascript:void(0)" id="pattern5"></a></li>
+                <li><a href="javascript:void(0)" id="pattern6"></a></li>
+                <div class="clear"></div>
+                <li><a href="javascript:void(0)" id="pattern7"></a></li>
+                <li><a href="javascript:void(0)" id="pattern8"></a></li>
+                <li><a href="javascript:void(0)" id="pattern9"></a></li>
+                <div class="clear"></div>
+                <li><a href="javascript:void(0)" id="pattern10"></a></li>
+                <li><a href="javascript:void(0)" id="pattern11"></a></li>
+                <li><a href="javascript:void(0)" id="pattern12"></a></li>
+            </ul>
+        </form>
+        <div class="clear" style="height:15px;"></div>
+    </div>
+	<!-- start: #wrapper -->
+    <div id="wrapper">
+    
 
 <center>
 <tr>
@@ -74,5 +101,20 @@
 			</s:iterator>
 		</table>
 </center>
+  </div>
+      <!-- start: #footer -->
+        <footer id="footer">
+        	<nav>
+            	<ul>
+                	<li><a href="sinfor?semail=${semail}&sna=${sna}" rel="1" onclick="javascript:window.location.href='http://localhost:8080/354/studentinfor.jsp'">个人信息</a></li>
+                    <li><a href="stui?semail=${semail}&sna=${sna}" rel="2" onclick="javascript:window.location.href='http://localhost:8080/354/stuij.jsp'">系统推荐</a></li>
+                    <li><a href="schoose?semail=${semail}&sna=${sna}" rel="3" onclick="javascript:window.location.href='http://localhost:8080/354/xuandaoshi.jsp'">选择导师</a></li>
+                    <li><a href="syi?semail=${semail}&sna=${sna}" rel="4" onclick="javascript:window.location.href='http://localhost:8080/354/yxds.jsp'">已申请导师</a></li>
+                    <li><a href="syao?semail=${semail}&sna=${sna}" rel="5" onclick="javascript:window.location.href='http://localhost:8080/354/YYQXDS.jsp'">导师邀请</a></li>
+                </ul>
+            </nav>
+        </footer>
+		<!-- end: #footer -->
+        <div class="clear"></div>
 </body>
 </html>

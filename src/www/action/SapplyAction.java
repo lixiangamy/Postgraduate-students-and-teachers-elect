@@ -60,6 +60,8 @@ ModelDriven<file>{
 		return snuma;
 	}
     public String getSchoola(){
+    	//◊™¬Î
+		/**/
 		return schoola;
 	}
     public String getSmaina(){
@@ -100,6 +102,19 @@ ModelDriven<file>{
         this.snuma = snuma;
     }
     public void setSchoola(String schoola) {
+    	/*System.out.print(schoola);
+    	byte tByte[] = null;
+		try {
+			tByte = schoola.getBytes("ISO-8859-1");
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			schoola = new String(tByte,"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		System.out.print(schoola);*/
         this.schoola = schoola;
     }
     public void setSmaina(String smaina) {
@@ -109,6 +124,7 @@ ModelDriven<file>{
         this.srankinga = srankinga;
     }
     public void setSchena(String schena) {
+    	//System.out.print(schena);
         this.schena = schena;
     }
     public void setSboa(int sboa) {
@@ -149,12 +165,13 @@ ModelDriven<file>{
 		java.sql.ResultSet re11 = null;
 		int i=0;
 		int em=0;
+		System.out.print(semaila);
+		
 		if(SapplyAction.isEmptyString(semaila))
 		{
 			if (SapplyAction.checkEmail(semaila))// —È÷§” œ‰
 
 			{
-				System.out.println(i); 
 			    flag=connect_tempp.prepareStatement("select n,a,e,s,xuehao,school,m,p,c,b,number,d,photo,pone,ptwo,pthree,prove from student where e = ?");
 				flag.setString(1, semaila);
 				re1=flag.executeQuery();

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colores - Responsive HTML vCard</title>
+<title>考研师生互选系统</title>
 <meta name="keywords" content="Your keywords here">
 <meta name="description" content="Your description">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,7 +88,6 @@
                     <li class="box">
                         <!-- start: #home -->
                         <div id="home">
-                            <div class="border"></div>
                             <div class="info alignleft">
                                 <ul class="info np">
                                     <s:form action="back" theme="simple" enctype="multipart/form-data"> 
@@ -138,94 +137,32 @@
                     <li class="box">
                         <!-- start: #resume -->
                         <div id="resume">
-                            <div class="border"></div>
-                            <div class="alignleft">
-                                <section class="skills">
-                                    <h3 class="np">SOFTWARE SKILLS</h3>
-                                    <ul class="info">
-                                        <li><span class="rating5"></span>Adobe Fireworks</li>
-                                        <li><span class="rating2"></span>Adobe Photoshop</li>
-                                        <li><span class="rating5"></span>Adobe Illustrator</li>
-                                        <li><span class="rating3"></span>Adobe Dreamweaver</li>
-                                        <li><span class="rating1"></span>Corel Painter</li>
-                                    </ul>
-                                </section>
-                                <section class="skills">
-                                    <h3>PROGRAMMING SKILLS</h3>
-                                    <ul class="info">
-                                        <li><span class="rating3"></span>HTML / HTML 5</li>
-                                        <li><span class="rating2"></span>CSS / CSS 3</li>
-                                        <li><span class="rating1"></span>PHP</li>
-                                        <li><span class="rating3"></span>MYSQL</li>
-                                    </ul>
-                                </section>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="alignright">
-                                <section class="misc">
-                                    <h3>EDUCATION</h3>
-                                    <ul class="info">
-                                        <li><span class="date">1996 - 2001</span><p>University of Harvard<span class="charge">Graphic and Illustrator Designer</span></p></li>
-                                        <li><span class="date">2003- 2007</span><p>School of Arts, Los Angeles, CA<span class="charge">Master on Design</span></p></li>
-                                </ul>
-                                	<div class="clear"></div>
-                                </section>
-                                <section class="misc">
-                                    <h3>WORK</h3>
-                                    <ul class="info">
-                                        <li><span class="date">1996 - 2001</span><p>University of Harvard<span class="charge">Graphic and Illustrator Designer</span></p></li>
-                                        <li><span class="date">2003- 2007</span><p>School of Arts, Los Angeles, CA<span class="charge">Master on Design</span></p></li>
-                                    </ul>
-                                    <div class="clear"></div>
-                                </section>
-                            </div>
+                            
+                            
                             <div class="clear"></div>
                         </div>
                         <!-- end: #resume -->
                     </li>
                     <li class="box">
                         <!-- start: #portfolio -->
-                        <div id="portfolio">
-                        	<h3>MY WORK</h3>
-                            <a href="http://www.cssmoban.com/" class="video"><img src="images/portfolio/1-th.jpg" width="140" height="100" alt="Image 1"><p><span></span>Lorem Ipsum</p></a>
-                            <a href="http://www.cssmoban.com/" class="website"><img src="images/portfolio/2-th.jpg" width="140" height="100" alt="Image 2"><p><span></span>Lorem Ipsum dolor sit amet</p></a>
-                            <a href="images/portfolio/3.jpg" class="photo" title="Lorem Ipsum dolor sit amet" rel="gallery1"><img src="images/portfolio/3-th.jpg" width="140" height="100" alt="Image 3"><p><span></span>Lorem Ipsum dolor sit amet</p></a>
-                            <a href="http://www.cssmoban.com/" class="video last"><img src="images/portfolio/4-th.jpg" width="140" height="100" alt="Img 1"><p><span></span>Lorem Ipsum</p></a>
-                            <a href="http://www.cssmoban.com/" class="video"><img src="images/portfolio/2-th.jpg" width="140" height="100" alt="Image 5"><p><span></span>Lorem Ipsum</p></a>
-                            <a href="http://www.cssmoban.com/" class="website"><img src="images/portfolio/3-th.jpg" width="140" height="100" alt="Image 6"><p><span></span>Lorem Ipsum dolor sit amet</p></a>
-                            <a href="images/portfolio/4.jpg" class="photo" title="Lorem Ipsum dolor sit amet" rel="gallery1"><img src="images/portfolio/4-th.jpg" width="140" height="100" alt="Image 7"><p><span></span>Lorem Ipsum dolor sit amet</p></a>
-                            <a href="http://www.cssmoban.com/" class="video last"><img src="images/portfolio/1-th.jpg" width="140" height="100" alt="Img 8"><p><span></span>Lorem Ipsum</p></a>
-                        </div>
+                        
                         <!-- end: #portfolio -->
                     </li>
                     <li>
                         <!-- start #contact -->
                         <div id="contact">
-                            <div class="border"></div>
-                            <div class="alignleft">
-                                <form action="send.php" class="contact" method="post">
-                                    <h3 class="np">CONTACT ME</h3>
-                                    <input type="text" name="name" class="inputbox required alignleft" title="Your name...">
-                                    <input type="text" name="email" class="inputbox required alignright" title="Your email...">
-                                    <textarea name="message" class="required" title="Your message..."></textarea>
-                                    <input type="hidden" name="action" value="send">
-                                    <input type="submit" value="Send" class="send">
-                                </form>
-                                <div class="clear"></div>
-                                <section>
-                                    <h3>CONTACT INFO</h3>
-                                    <p>Road Hill 239, Florida, CA<br>United States</p>
-                                </section>
-                            </div>
-                            <div class="alignright">
-                                <section>
-                                    <h3 class="np">MAP</h3>
-                                    <div id="map_canvas"></div>
-                                </section>
-                            </div>
+                            
                             <div class="clear"></div>
                         </div>
                         <!-- end: #contact -->
+                    </li>
+                    <li>
+                        <!-- start #syao -->
+                        <div id="syao">
+                            
+                            <div class="clear"></div>
+                        </div>
+                        <!-- end: #syao -->
                     </li>
                 </ul>
             </div>
@@ -236,11 +173,11 @@
         <footer id="footer">
         	<nav>
             	<ul>
-                	<li><a href="sinfor?semail=${semail}&sna=${sna}" rel="1">个人信息</a></li>
-                    <li><a href="stui?semail=${semail}&sna=${sna}" rel="2">系统推荐</a></li>
-                    <li><a href="schoose?semail=${semail}&sna=${sna}" rel="3">选择导师</a></li>
-                    <li><a href="syi?semail=${semail}&sna=${sna}" rel="4">已申请导师</a></li>
-                    <li><a href="syao?semail=${semail}&sna=${sna}" rel="5">导师邀请</a></li>
+                	<li><a href="sinfor?semail=${semail}&sna=${sna}" rel="1" onclick="javascript:window.location.href='http://localhost:8080/354/studentinfor.jsp'">个人信息</a></li>
+                    <li><a href="stui?semail=${semail}&sna=${sna}" rel="2" onclick="javascript:window.location.href='http://localhost:8080/354/stuij.jsp'">系统推荐</a></li>
+                    <li><a href="schoose?semail=${semail}&sna=${sna}" rel="3" onclick="javascript:window.location.href='http://localhost:8080/354/xuandaoshi.jsp'">选择导师</a></li>
+                    <li><a href="syi?semail=${semail}&sna=${sna}" rel="4" onclick="javascript:window.location.href='http://localhost:8080/354/yxds.jsp'">已申请导师</a></li>
+                    <li><a href="syao?semail=${semail}&sna=${sna}" rel="5" onclick="javascript:window.location.href='http://localhost:8080/354/YYQXDS.jsp'">导师邀请</a></li>
                 </ul>
             </nav>
         </footer>
