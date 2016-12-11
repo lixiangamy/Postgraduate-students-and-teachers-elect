@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <!doctype html>
 <html>
@@ -28,7 +28,7 @@
 				<s:radio name="sgsexa" color="#37b5f9" list="%{#{'1':'男','0':'女'}}" ></s:radio> 
 				</s:else></br>
                 <input name="snuma" type="text" class="kuang_txt phone" placeholder="学号">
-                <input name="schoola" type="text" class="kuang_txt phone" placeholder="本科学校(请填全称)">
+                <s:textfield name="schoola" class="kuang_txt phone" placeholder="本科学校(请填全称)"></s:textfield>
                 <input name="smaina" type="text" class="kuang_txt phone" placeholder="本科专业(请填全称)">
                 <input name="srankinga" type="text" class="kuang_txt phone" placeholder="专业排名(如实填写)">
                <br><h2>是否读博: </h2>    <s:if test="sboa==null">

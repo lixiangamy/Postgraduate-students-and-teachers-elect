@@ -44,6 +44,21 @@ a[href^="http://tongji.baidu.com"]{display: none;}
 /*注册页面*/
 .login_bj{ background:url(../images/bj_zhuce.jpg) no-repeat top center;}
 .zhuce_body{ float:left; width:100%; height:auto;}
+.zhuce_body .textf{padding: 5px; 
+		margin: 2px 0 2px 0; 
+		background: #fff; 
+		width: 100px; 
+		font-size: 3px;
+		font-family: 宋体,Arial, Helvetica, sans-serif;
+		color: #555; 
+		border: 2px solid #e0e8c6;
+			-webkit-border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    border-radius: 5px;
+		
+		-moz-box-shadow: 3px 3px 3px #8ba82c;
+	-webkit-box-shadow:  3px 3px 3px #8ba82c;
+	box-shadow:  3px 3px 3px #8ba82c;}
 .zhuce_body .logo{ width:114px; height:54px; margin:50px 0 0 0px;}
 .zhuce_body .zhuce_kong{ position:absolute; top:50%; left:50%; width:600px; height:478px; margin-left:-300px; margin-top:-239px;}
 .zhuce_body .zhuce_kong .zc{width:600px; height:850px;}
